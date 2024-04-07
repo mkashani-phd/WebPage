@@ -1,211 +1,27 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="view port" content="width=device-width, intial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-<title>moh kashani portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo App</title>
 </head>
-
 <body>
-	<div class="box"></div>
-	<header class="header">
-		<a href="#home" class="logo">Moh Kashani</a>
-		<nav class="navbar">
-			<ul class="links">
-			<li><a href="#home" class="active" onclick="homeClick()">Home</a></li>
-			<li><a href="#about" onclick="aboutClick()">About</a></li>
-			<li><a href="#portfolio" onclick="portfolioClick()">Portfolio</a></li>
-			<li><a href="#contact" onclick="contactClick()"> Contact</a></li>
-			</ul>
-			
-		<div class="toggle_btn"><i class="bx bx-menu"></i></div>
-		<div class="dropdown_menu">
-			<li><a href="#home" class="active" onclick="homeClick()">Home</a></li>
-			<li><a href="#about" onclick="aboutClick()">About</a></li>
-			<li><a href="#portfolio" onclick="portfolioClick()">Portfolio</a></li>
-			<li><a href="#contact" onclick="contactClick()"> Contact</a></li>
-		</div>
-		</nav>
-	</header>
-<!--           this part for home        -->
-	<section id="home" class="home">
-		<div class="home-pic"></div>
-		 <div class="home-content">
-			 
-			 <h1>Hi, I'm Moh Kashani</h1>
-			 <h3>Computer Engineer</h3>
-			 <p>I'm a PhD Student at Iowa State University in computer engineering.
-			2 years of experience with USRP X310, which produces 4 GB per second, to collect Physical layer data. Applied signal processing and machine learning tools to detect anomaly.
-			Interested in Quantum Computers and Quantum Security.</p>
-			 <p>Wireless Security | deep learning | Robotics | Python | C | C++ | Embedded system| Control System | Communication | Software Developer | Quantum Computer</p>
-			 <div class="btn-box">
-			 <a href="#">Download CV</a>
-			 <a href="#contact">Let's Talk</a>
-			 </div>
-		</div>
-	
-		<div class="home-sci">
-			<a href="#"><i class="bx bxl-facebook"></i></a>
-			<a href="#"><i class="bx bxl-twitter"></i></a>
-			<a href="https://www.linkedin.com/in/mkashani-phd/"><i class="bx bxl-linkedin"></i></a>
-			<a href="https://github.com/mkashani-phd"><i class='bx bxl-github'></i></a>
-		</div>
-	</section>
-	<!--           this part for about        -->
-	<section  id="about" class="about">
-	<div class="wrapper">
-			<div class="container">
-				<input type="radio" name="slide" id="c1" checked>
-				<label for="c1" class="card">
-					<div class="row">
-						<div class="icon"><i class="bx bxs-graduation"></i></div>
-						<div class="description">
-							<h4>Education</h4>
-							<p>Iowa State University, Doctor of Philosophy - PhD, Computer Engineering 2019 - 2024
-							<h6><b>Activities and Societies:</b> PrISUm solar car club<br>
-							Focusing on physical layer security of healthcare sensors using machine learning tools. Creating data set using BLE modules and SDR and analyzing time series data to extract PHY-layer features.Focusing on physical layer security of healthcare sensors using machine learning tools. Creating data set using BLE modules and SDR and analyzing time series data to extract PHY-layer features.<br>
-							<b>Skills:</b> Proof of Concept · Signal Processing · Communication · Python (Programming Language) · Wireless Technologies · Debugging Code · Wireless Networking</h6>
-							</p>
-							
-							<p>Amirkabir University of Technology - Tehran Polytechnic, Bachelor of Science - BS, Electrical and Electronics Engineering 2015 - Jun 2019
-								<h6>Activities and societies: programming, hiking, board games<br>
-								<b>Skills:</b> Field-Programmable Gate Arrays (FPGA) · Proof of Concept · Signal Processing · Communication · Python (Programming Language) · Robot · Debugging Code · Robotic Process Automation (RPA)</h6>
-							</p>
-						</div>
-					</div>
-				</label>
-				<input type="radio" name="slide" id="c2" >
-				<label for="c2" class="card">
-					<div class="row">
-						<div class="icon"><i class="bx bx-cog"></i></div>
-						<div class="description">
-							<h4>Experience</h4>
-							<p>Graduate Assistant Iowa State University · <br>Full-time Aug 2019 - Present · 4 yrs 7 mos<br>
-							Ames, IA, USA · On-siteAmes, IA, USA · On-siteb<br>
-							<h6>Studied multiple IEEE standard such as 802.15.6, 802.15.4, ...<br>
-							Improving security while reducing power consumption of authentication process.
-							Collecting Physical Layer data (CSI, RSSI, ToF, AoA, ...) using USRP SDRs and data processing method to gather a dataset.
-							Applying machine learning algorithm on dataset to detect anomaly in time series data.</h6>
-							</p>
-							<p>Software and automation Engineer Internbr<br>
-							Corteva Agriscience · Internship
-							Jan 2023 - Dec 2023 · 1 yr<br>
-							Johnston, Iowa, United States · Hybrid
-							<h6>Designing tools and devices to automate seed researches using the following skills: Board bring-up, data science, embedded design and programming, computer vision.</h6>
-							</p>
-							<p>Software Developer Data Scientist<br> SoilSerdem · Internship Jul 2022 - Aug 2022 · 2 mos<br>
-							Ames, Iowa, United States<br>
-							<h6>Rewrote ML codes from R to python and decreased runtime to 1/7 (using parallel computing interface in sklearn library)
-							Implemented different clustering algorithm for feature selection purposes in geo-spatial data format such as TIFF shape and geopkg.</h6>
-							</p>
-						</div>
-					</div>
-				</label>
-				<input type="radio" name="slide" id="c3" >
-				<label for="c3" class="card">
-					<div class="row">
-						<div class="icon"><i class="bx bx-layer"></i></div>
-						<div class="description">
-							<h4>Projects</h4>
-							<p><a href="https://github.com/mkashani-phd/BLEWBAN_Dataset" style="color:#ededed;
-							text-decoration:none;">BLE_WBANBLE_WBAN</a><br> Aug 2021 - Present
-							Associated with Iowa State University
-							<h6>Anomaly detection using Autoencoder and classification based on physical layer signal for Bluetooth Low Energy. Specifically tuned for Wireless Body Area Network (WBAN) with on and offBody recording.Anomaly detection using Autoencoder and classification based on physical layer signal for Bluetooth Low Energy. Specifically tuned for Wireless Body Area Network (WBAN) with on and offBody recording.<br>
-							Skills: Linux · Deep Learning · CNN · Python (Programming Language) · TensorFlow · Keras · MongoDB · Autoencoders · Communication · dataset · Signal Processing</h6>
-							</p>
-							<p><a href="https://github.com/s-m-kashani98/multi-agent_robot_car" style="color:#ededed;
-							text-decoration:none;">Senior Design - network of semi- autonomous Vehicle based on Multi-agent systems</a><br>Jan 2018 - Jun 2019
-							Associated with Amirkabir University of Technology - Tehran Polytechnic<br>
-							<h6>A robotic project that involves a lot of control knowledge. Building and controlling robots based on multi-agent system.<br>
-							Skills: Robotic Process Automation (RPA) · Debugging Code</h6></p>
-							<p>simple sample and hold circuit design<br>Jun 2018 - Present</p>
-							<p>Selective harmonic elimination<br>May 2018 - Present</p>
-							<p>n_layer reflection and transmission coefficient<br>Jan 2018 - Present</p>
-							<p><a href="https://github.com/s-m-kashani98/AUT_robot_car" style="color:#ededed;
-								text-decoration:none;">robot car in AUT</a><br>Jun 2018 - Jul 2018<br><h6>Skills: Robotic Process Automation (RPA) · Debugging Code · Proof of Concept</h6></p>
-							
-							
-						</div>
-					</div>
-				</label>
-				<input type="radio" name="slide" id="c4" >
-				<label for="c4" class="card">
-					<div class="row">
-						<div class="icon"><i class="bx bx-library"></i></div>
-						<div class="description">
-							<h4>Licenses, Skills and Languages</h4>
-							<p><a href="https://www.linkedin.com/in/mkashani-phd/" style="text-decoration: none;">See in linkedin</a></p>
-						</div>
-					</div>
-				</label>
-			</div>
-		</div>
-	</section>
-<!--           this part for portfolio        -->
-	<section  id="portfolio" class="portfolio">
-		<div class="wrapper">
-			<div class="container">
-				<div class="portofolio">
-					<div class="heading">
-						<h4 class="headingtext1">What I Do?</h4>
-						<h1 class="headingtext2">HERE ARE SOME OF MY Projects</h1>
-					</div>
-					<div class="portofolio_cards">
-						<div class="portofolio_card">
-							<i class='bx bx-bulb'></i>
-							<h2>Inovation Ideas</h2>
-							<p>Here is project</p>
-						</div>
-						<div class="portofolio_card">
-							<i class='bx bxs-data'></i>
-							<h2>Software</h2>
-							<p>Here is project</p>
-						</div>
-						<div class="portofolio_card">
-							<i class='bx bx-mobile'></i>
-							<h2>Application</h2>
-							<p>Here is project</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>		
-	</section>	
+    <h1>Echo App</h1>
+    <input type="text" id="messageInput" placeholder="Enter a message">
+    <button onclick="sendMessage()">Send</button>
+    <p id="echoResponse"></p>
 
-<!--           this part for contact        -->
-	<section class="contact" id="contact">
-        <h1 class="contact_heading">Contact Me</h1>
-        <div class="contact_main">
-            <h1>Send Me a massage</h1>
-            <p>Your email address will not be published. All fields are required</p>
-            <div>
-                <input name="" type="text" class="name" placeholder="Your Name">
-                <input type="text" class="email" placeholder="Your Email">
-            </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Massage"></textarea>
-            <button>Submit Me</button>
-        </div>
-    </section>
-
-<footer>Copyright- 2024 All rights resevrved | This is made by <span>Moh Kashani</span></footer>
-	
-<script>
-	const toggleBtn = document.querySelector('.toggle_btn')
-	const toggleBtnIcon = document.querySelector('.toggle_btn i')
-	const dropDownMenu = document.querySelector('.dropdown_menu')
-	
-	toggleBtn.onclick = function(){
-		dropDownMenu.classList.toggle('open')
-		const isOpen = dropDownMenu.classList.contains('open')
-		
-		toggleBtnIcon.classList = isOpen
-		?'bx bx-x-circle'
-		:'bx bx-menu'
-		}
-</script>
-	
+    <script>
+        async function sendMessage() {
+            const message = document.getElementById('messageInput').value;
+            const response = await fetch('/echo', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({message: message})
+            });
+            const data = await response.json();
+            document.getElementById('echoResponse').innerText = `Server echoed: ${data.echo}`;
+        }
+    </script>
 </body>
 </html>
