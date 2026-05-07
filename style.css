@@ -269,6 +269,33 @@ body {
     0 24px 64px rgba(0,0,0,0.55);
 }
 
+.hero-degrees {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.hero-deg-pill {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  color: #94a3b8;
+  padding: 0.28rem 0.85rem;
+  border-radius: 100px;
+  font-size: 0.76rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.hero-deg-pill:hover {
+  background: rgba(37, 99, 235, 0.18);
+  color: #cbd5e1;
+}
+
 .hero-scroll-hint {
   position: absolute;
   bottom: 2rem;
@@ -1317,6 +1344,10 @@ footer {
   .hero-badge {
     white-space: normal;
     text-align: center;
+  }
+
+  .hero-degrees {
+    justify-content: center;
   }
 
   .contact-grid {

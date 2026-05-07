@@ -19,16 +19,15 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#research" onclick="closeMenu()">Research</a></li>
-      <li><a href="#education" onclick="closeMenu()">Education</a></li>
       <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+      <li><a href="#media" onclick="closeMenu()">Media</a></li>
+      <li><a href="#research" onclick="closeMenu()">Research</a></li>
       <li><a href="#publications" onclick="closeMenu()">Publications</a></li>
       <li><a href="#awards" onclick="closeMenu()">Awards</a></li>
       <li><a href="#talks" onclick="closeMenu()">Talks</a></li>
       <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
     </ul>
   </nav>
-
   <!-- ======== HERO ======== -->
   <section class="hero" id="home">
     <div class="hero-container">
@@ -65,6 +64,12 @@
             LinkedIn
           </a>
         </div>
+        <div class="hero-degrees">
+          <span class="hero-deg-pill">Ph.D. CE &nbsp;·&nbsp; Iowa State &nbsp;·&nbsp; 2025</span>
+          <span class="hero-deg-pill">M.S. Physics/QC &nbsp;·&nbsp; UW–Madison &nbsp;·&nbsp; exp. 2026</span>
+          <span class="hero-deg-pill">M.S. CE &nbsp;·&nbsp; Iowa State &nbsp;·&nbsp; 2024</span>
+          <span class="hero-deg-pill">B.S. EE &nbsp;·&nbsp; AUT &nbsp;·&nbsp; 2019</span>
+        </div>
       </div>
       <div class="hero-photo-wrap">
         <img src="img/photo_2026-05-01_21-40-54.jpg" alt="Moh Kashani" class="hero-photo" />
@@ -72,125 +77,6 @@
     </div>
     <div class="hero-scroll-hint">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-    </div>
-  </section>
-
-  <!-- ======== RESEARCH INTERESTS ======== -->
-  <section id="research" class="section-light">
-    <div class="container">
-      <p class="section-label">Focus Areas</p>
-      <h2 class="section-title">Research Interests</h2>
-      <div class="section-divider"></div>
-      <div class="interests-grid">
-        <div class="interest-card">
-          <div class="interest-icon">⚛️</div>
-          <h3>Quantum Networks</h3>
-          <p>Real-time control systems for quantum computers, FPGA-based qubit and photonic signal control using ARTIQ and Migen, distributed quantum network testbeds, and timing synchronization across quantum nodes.</p>
-        </div>
-        <div class="interest-card">
-          <div class="interest-icon">📡</div>
-          <h3>RF Fingerprinting & Wireless Security</h3>
-          <p>AI-driven RF fingerprinting using complex-valued CNNs, large-scale RF dataset collection on SDR platforms (USRP B210/X310), waveform classification, and anomaly detection for 5G and WBAN security.</p>
-        </div>
-        <div class="interest-card">
-          <div class="interest-icon">🔐</div>
-          <h3>Secure Communication Protocols</h3>
-          <p>Channel-based authentication for body sensor networks, message authentication codes in lossy channels, integrity checks for healthcare devices (IEEE 802.15.6, BLE), and custom MAC/IP layer design.</p>
-        </div>
-        <div class="interest-card">
-          <div class="interest-icon">🧠</div>
-          <h3>Deep Learning for Signal Processing</h3>
-          <p>Complex-valued CNN architectures, adversarial signal defense, real-time anomaly detection, superposition coding on 2-FSK, and large-scale RF dataset design, collection, and validation.</p>
-        </div>
-        <div class="interest-card">
-          <div class="interest-icon">🔧</div>
-          <h3>Embedded Systems & IoT</h3>
-          <p>Bare-metal firmware on ESP32 and Raspberry Pi Pico, PCB design, low-latency real-time data processing, and custom communication stacks for industrial and medical IoT deployments.</p>
-        </div>
-        <div class="interest-card">
-          <div class="interest-icon">🔭</div>
-          <h3>Quantum-Classical Integration</h3>
-          <p>Bridging classical networking with quantum architectures for scalable, fault-tolerant communication layers; telemetry monitoring with PostgreSQL and Grafana for quantum experiment infrastructure.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======== EDUCATION ======== -->
-  <section id="education" class="section-white">
-    <div class="container">
-      <p class="section-label">Academic Background</p>
-      <h2 class="section-title">Education</h2>
-      <div class="section-divider"></div>
-      <div class="edu-list">
-
-        <div class="edu-item">
-          <div class="edu-icon-col">
-            <div class="edu-dot"></div>
-            <div class="edu-line"></div>
-          </div>
-          <div class="edu-body">
-            <div class="edu-header">
-              <div>
-                <div class="edu-degree">M.S. in Physics — Quantum Computing</div>
-                <div class="edu-school">University of Wisconsin–Madison &nbsp;·&nbsp; Madison, WI</div>
-                <div class="edu-advisor">Advisor: Prof. Mark Saffman</div>
-              </div>
-              <span class="edu-year">Expected 2026</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="edu-item">
-          <div class="edu-icon-col">
-            <div class="edu-dot"></div>
-            <div class="edu-line"></div>
-          </div>
-          <div class="edu-body">
-            <div class="edu-header">
-              <div>
-                <div class="edu-degree">Ph.D. in Computer Engineering</div>
-                <div class="edu-school">Iowa State University &nbsp;·&nbsp; Ames, IA</div>
-                <div class="edu-advisor">Advisors: Prof. Ashfaq Khokhar &nbsp;·&nbsp; Prof. Sang Kim</div>
-              </div>
-              <span class="edu-year">2025</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="edu-item">
-          <div class="edu-icon-col">
-            <div class="edu-dot"></div>
-            <div class="edu-line"></div>
-          </div>
-          <div class="edu-body">
-            <div class="edu-header">
-              <div>
-                <div class="edu-degree">M.S. in Computer Engineering</div>
-                <div class="edu-school">Iowa State University &nbsp;·&nbsp; Ames, IA</div>
-              </div>
-              <span class="edu-year">2024</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="edu-item edu-item-last">
-          <div class="edu-icon-col">
-            <div class="edu-dot"></div>
-          </div>
-          <div class="edu-body">
-            <div class="edu-header">
-              <div>
-                <div class="edu-degree">B.S. in Electrical Engineering</div>
-                <div class="edu-school">AmirKabir University of Technology &nbsp;·&nbsp; Tehran, Iran</div>
-                <div class="edu-advisor">Ranked 1st in class &nbsp;·&nbsp; 2nd Best Senior Design Project</div>
-              </div>
-              <span class="edu-year">2019</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
     </div>
   </section>
 
@@ -348,193 +234,92 @@
     </div>
   </section>
 
-  <!-- ======== PUBLICATIONS ======== -->
-  <section id="publications" class="section-white">
+  <!-- ======== NEWS & MEDIA ======== -->
+  <section id="media" class="section-white">
     <div class="container">
-      <p class="section-label">Academic Work</p>
-      <h2 class="section-title">Publications</h2>
+      <p class="section-label">In the News</p>
+      <h2 class="section-title">Media &amp; Open Data</h2>
       <div class="section-divider"></div>
-      <div class="pub-meta-row">
-        <span class="pub-count">7 publications &nbsp;·&nbsp; IEEE &amp; NDSS venues</span>
-        <a href="https://scholar.google.com/citations?user=5fMw68EAAAAJ&hl=en" target="_blank" rel="noopener" class="pub-scholar-link">
-          View on Google Scholar
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      <div class="news-grid">
+
+        <a href="https://news.engineering.iastate.edu/2025/01/14/moh-kashani-working-to-safeguard-medical-devices/" target="_blank" rel="noopener" class="news-item">
+          <div class="news-img-wrap">
+            <img src="https://news.engineering.iastate.edu/files/2025/01/ECE-Kashani-Wearable-Devices.jpeg" alt="Moh Kashani working to safeguard medical devices" class="news-img" />
+          </div>
+          <div class="news-body">
+            <div class="news-tag">Media Coverage &nbsp;·&nbsp; ISU College of Engineering</div>
+            <div class="news-title">Moh Kashani working to safeguard medical devices</div>
+            <div class="news-desc">
+              Featured in Iowa State University's College of Engineering news — highlighting research on securing wearable medical devices against wireless signal attacks using AI-driven detection.
+            </div>
+            <span class="news-link">
+              Read article
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </span>
+          </div>
         </a>
-      </div>
-      <div class="pub-list">
 
-        <div class="pub-item pub-item-featured">
-          <span class="pub-num">7</span>
-          <div class="pub-body">
-            <div class="pub-title">Securing Relay Satellite System: Direct MAC Transmission by Superposition Coding</div>
-            <div class="pub-authors"><strong>SeyedMohammad Kashani</strong>, Branden Buhler, Sang Wu Kim, Ashfaq Khokhar</div>
-            <div class="pub-footer">
-              <span class="pub-venue pub-venue-ndss">NDSS SpaceSec 2026</span>
-              <a href="https://www.ndss-symposium.org/wp-content/uploads/spacesec26-87.pdf" target="_blank" rel="noopener" class="pub-pdf-link" onclick="event.stopPropagation()">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                PDF
-              </a>
-              <a href="https://www.youtube.com/watch?v=Wkwol3o8VnA" target="_blank" rel="noopener" class="pub-yt-link" onclick="event.stopPropagation()">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                Video
-              </a>
-              <a href="https://github.com/mkashani-phd/Secure_Wireless_Relay" target="_blank" rel="noopener" class="pub-repo-link" onclick="event.stopPropagation()">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                Code
-              </a>
+        <a href="https://ieee-dataport.org/documents/ble-wban-rf-real-world-dataset-ble-devices-human-centric-healthcare-environments" target="_blank" rel="noopener" class="news-item">
+          <div class="news-img-wrap news-img-placeholder">
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="rgba(99,155,255,0.7)" stroke-width="1.2">
+              <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v4c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 9v4c0 1.66 4.03 3 9 3s9-1.34 9-3V9"/><path d="M3 13v4c0 1.66 4.03 3 9 3s9-1.34 9-3v-4"/>
+            </svg>
+            <span class="placeholder-label">IEEE DataPort</span>
+          </div>
+          <div class="news-body">
+            <div class="news-tag">Open Dataset &nbsp;·&nbsp; IEEE DataPort</div>
+            <div class="news-title">BLE-WBAN RF Real-World Dataset</div>
+            <div class="news-desc">
+              Co-authored and publicly released a dataset capturing real-world RF signals from BLE devices in human-centric healthcare environments — available on IEEE DataPort for the research community.
             </div>
+            <span class="news-link">
+              Access dataset
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </span>
           </div>
-          <div class="pub-figure-wrap">
-            <img src="img/Secure Wireless Relay.svg" alt="Secure Wireless Relay satellite system diagram" class="pub-figure" />
-          </div>
-        </div>
-
-        <div class="pub-item pub-item-featured">
-          <span class="pub-num">6</span>
-          <div class="pub-body">
-            <div class="pub-title">OptiMAC: Adaptive Security Optimization for Message Authentication Code in Adversarial Environment</div>
-            <div class="pub-authors"><strong>S. Kashani</strong>, E. Khademnia, Görkem, Y. Dong, T. Wu, Sang Wu Kim, A. Khokhar, F. Nait-Abdesselam, S. Hussain</div>
-            <div class="pub-footer">
-              <span class="pub-venue">IEEE DSN 2026</span>
-              <a href="https://github.com/mkashani-phd/OptiMAC" target="_blank" rel="noopener" class="pub-repo-link" onclick="event.stopPropagation()">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                Code
-              </a>
-            </div>
-          </div>
-          <div class="pub-figure-wrap">
-            <img src="https://raw.githubusercontent.com/mkashani-phd/OptiMAC/main/UDP%20Demo/img/WiFi/0.1SG.png" alt="OptiMAC results figure" class="pub-figure" />
-          </div>
-        </div>
-
-        <div class="pub-item">
-          <span class="pub-num">5</span>
-          <div class="pub-body">
-            <div class="pub-title">Two-Dimensional Compound Message Authentication Code in Lossy Channels</div>
-            <div class="pub-authors"><strong>SeyedMohammad Kashani</strong>, Sung-Woo Kim, Ashfaq Khokhar</div>
-            <div class="pub-footer">
-              <span class="pub-venue">IEEE ICC 2025</span>
-              <a href="https://www.youtube.com/watch?v=a_T46PgNiH8&t=209s" target="_blank" rel="noopener" class="pub-yt-link" onclick="event.stopPropagation()">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                Video
-              </a>
-              <a href="https://github.com/mkashani-phd/2D_MAC_SuperPosition" target="_blank" rel="noopener" class="pub-repo-link" onclick="event.stopPropagation()">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                Code
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="pub-item">
-          <span class="pub-num">4</span>
-          <div class="pub-body">
-            <div class="pub-title">Enhancing NextG Wireless Security: A Lightweight Secret Sharing Scheme with Robust Integrity Check for Military Communications</div>
-            <div class="pub-authors">Abhisek Kumar Jha, <strong>SeyedMohammad Kashani</strong>, Hossein Mohammadi, Andre Kirchner, Minglong Zhang, Remi A. Chou, Sang Wu Kim, Hyuck Kwon, Vuk Marojevic, Taejoon Kim</div>
-            <span class="pub-venue">IEEE MICOM 2024</span>
-          </div>
-        </div>
-
-        <div class="pub-item pub-item-featured">
-          <span class="pub-num">3</span>
-          <div class="pub-body">
-            <div class="pub-title">Radio Frequency Fingerprinting in WBANs Using Complex-Valued CNNs</div>
-            <div class="pub-authors"><strong>SeyedMohammad Kashani</strong>, Syed Sherazi, Ashfaq Khokhar, Sung-Woo Kim, Fethi Nait-Abdesselam</div>
-            <span class="pub-venue">IEEE IWCMC 2024</span>
-          </div>
-          <div class="pub-figure-wrap">
-            <img src="img/CV-CNN.png" alt="Complex-Valued CNN model architecture" class="pub-figure" />
-          </div>
-        </div>
-
-        <div class="pub-item">
-          <span class="pub-num">2</span>
-          <div class="pub-body">
-            <div class="pub-title">Bluetooth Low Energy (BLE) RF Dataset for Machine Learning in WBANs</div>
-            <div class="pub-authors"><strong>SeyedMohammad Kashani</strong>, Syed Sherazi, Ashfaq Khokhar, et al.</div>
-            <div class="pub-footer">
-              <span class="pub-venue">IEEE WCNC 2024</span>
-              <a href="https://www.youtube.com/watch?v=Q2jhC9VyVHY" target="_blank" rel="noopener" class="pub-yt-link" onclick="event.stopPropagation()">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                Video
-              </a>
-              <a href="https://github.com/mkashani-phd/BLEWBAN_Dataset" target="_blank" rel="noopener" class="pub-repo-link" onclick="event.stopPropagation()">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                Code
-              </a>
-              <a href="slides/BLE Dataset for WBAN .pdf" target="_blank" rel="noopener" class="pub-pdf-link" onclick="event.stopPropagation()">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                Slides
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="pub-item">
-          <span class="pub-num">1</span>
-          <div class="pub-body">
-            <div class="pub-title">A Channel-Based Authentication Using Machine Learning for Body Sensor Networks</div>
-            <div class="pub-authors"><strong>SeyedMohammad Kashani</strong>, Syed Sherazi, Ashfaq Khokhar, et al.</div>
-            <span class="pub-venue">IEEE GlobeCom 2022</span>
-          </div>
-        </div>
+        </a>
 
       </div>
     </div>
   </section>
 
-  <!-- ======== AWARDS ======== -->
-  <section id="awards" class="section-light">
+  <!-- ======== RESEARCH INTERESTS ======== -->
+  <section id="research" class="section-light">
     <div class="container">
-      <p class="section-label">Recognition</p>
-      <h2 class="section-title">Honors &amp; Awards</h2>
+      <p class="section-label">Focus Areas</p>
+      <h2 class="section-title">Research Interests</h2>
       <div class="section-divider"></div>
-      <div class="awards-list">
-
-        <div class="award-item award-item-photo">
-          <div class="award-icon">🏛️</div>
-          <div class="award-body">
-            <div class="award-title">National Science Foundation — NeTS Early Career Investigation Workshop</div>
-            <div class="award-meta">Presented AI-based anomaly detection for secure wireless communication &nbsp;·&nbsp; 2024</div>
-          </div>
-          <a href="img/NSF NeTS ECI.jpg" target="_blank" rel="noopener" class="award-thumb-wrap" title="View photo">
-            <img src="img/NSF NeTS ECI.jpg" alt="NSF NeTS Early Career Investigation Workshop" class="award-thumb" />
-            <span class="award-thumb-overlay">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </span>
-          </a>
+      <div class="interests-grid">
+        <div class="interest-card">
+          <div class="interest-icon">⚛️</div>
+          <h3>Quantum Networks</h3>
+          <p>Real-time control systems for quantum computers, FPGA-based qubit and photonic signal control using ARTIQ and Migen, distributed quantum network testbeds, and timing synchronization across quantum nodes.</p>
         </div>
-
-        <div class="award-item award-item-photo">
-          <div class="award-icon">🏆</div>
-          <div class="award-body">
-            <div class="award-title">Best Graduate Seminar Presentation Award</div>
-            <div class="award-meta">"Radio Frequency Fingerprinting in Wireless Body Area Networks" &nbsp;·&nbsp; Iowa State University &nbsp;·&nbsp; 2024</div>
-          </div>
-          <a href="img/best seminar award.jpeg" target="_blank" rel="noopener" class="award-thumb-wrap" title="View certificate">
-            <img src="img/best seminar award.jpeg" alt="Best Graduate Seminar Presentation Award certificate" class="award-thumb" />
-            <span class="award-thumb-overlay">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-            </span>
-          </a>
+        <div class="interest-card">
+          <div class="interest-icon">📡</div>
+          <h3>RF Fingerprinting & Wireless Security</h3>
+          <p>AI-driven RF fingerprinting using complex-valued CNNs, large-scale RF dataset collection on SDR platforms (USRP B210/X310), waveform classification, and anomaly detection for 5G and WBAN security.</p>
         </div>
-
-        <div class="award-item">
-          <div class="award-icon">🎓</div>
-          <div>
-            <div class="award-title">Ranked 1st in Class</div>
-            <div class="award-meta">B.S. Electrical Engineering &nbsp;·&nbsp; AmirKabir University of Technology &nbsp;·&nbsp; 2019</div>
-          </div>
+        <div class="interest-card">
+          <div class="interest-icon">🔐</div>
+          <h3>Secure Communication Protocols</h3>
+          <p>Channel-based authentication for body sensor networks, message authentication codes in lossy channels, integrity checks for healthcare devices (IEEE 802.15.6, BLE), and custom MAC/IP layer design.</p>
         </div>
-
-        <div class="award-item">
-          <div class="award-icon">🥈</div>
-          <div>
-            <div class="award-title">Second-Best Senior Design Project Award</div>
-            <div class="award-meta">"Multi-Agent Autonomous Vehicle System" &nbsp;·&nbsp; AmirKabir University of Technology &nbsp;·&nbsp; 2019</div>
-          </div>
+        <div class="interest-card">
+          <div class="interest-icon">🧠</div>
+          <h3>Deep Learning for Signal Processing</h3>
+          <p>Complex-valued CNN architectures, adversarial signal defense, real-time anomaly detection, superposition coding on 2-FSK, and large-scale RF dataset design, collection, and validation.</p>
         </div>
-
+        <div class="interest-card">
+          <div class="interest-icon">🔧</div>
+          <h3>Embedded Systems & IoT</h3>
+          <p>Bare-metal firmware on ESP32 and Raspberry Pi Pico, PCB design, low-latency real-time data processing, and custom communication stacks for industrial and medical IoT deployments.</p>
+        </div>
+        <div class="interest-card">
+          <div class="interest-icon">🔭</div>
+          <h3>Quantum-Classical Integration</h3>
+          <p>Bridging classical networking with quantum architectures for scalable, fault-tolerant communication layers; telemetry monitoring with PostgreSQL and Grafana for quantum experiment infrastructure.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -623,8 +408,199 @@
     </div>
   </section>
 
+  <!-- ======== PUBLICATIONS ======== -->
+  <section id="publications" class="section-light">
+    <div class="container">
+      <p class="section-label">Academic Work</p>
+      <h2 class="section-title">Publications</h2>
+      <div class="section-divider"></div>
+      <div class="pub-meta-row">
+        <span class="pub-count">7 publications &nbsp;·&nbsp; IEEE &amp; NDSS venues</span>
+        <a href="https://scholar.google.com/citations?user=5fMw68EAAAAJ&hl=en" target="_blank" rel="noopener" class="pub-scholar-link">
+          View on Google Scholar
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+      <div class="pub-list">
+
+        <div class="pub-item pub-item-featured">
+          <span class="pub-num">7</span>
+          <div class="pub-body">
+            <div class="pub-title">Securing Relay Satellite System: Direct MAC Transmission by Superposition Coding</div>
+            <div class="pub-authors"><strong>SeyedMohammad Kashani</strong>, Branden Buhler, Sang Wu Kim, Ashfaq Khokhar</div>
+            <div class="pub-footer">
+              <span class="pub-venue pub-venue-ndss">NDSS SpaceSec 2026</span>
+              <a href="https://www.ndss-symposium.org/wp-content/uploads/spacesec26-87.pdf" target="_blank" rel="noopener" class="pub-pdf-link" onclick="event.stopPropagation()">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                PDF
+              </a>
+              <a href="https://www.youtube.com/watch?v=Wkwol3o8VnA" target="_blank" rel="noopener" class="pub-yt-link" onclick="event.stopPropagation()">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Video
+              </a>
+              <a href="https://github.com/mkashani-phd/Secure_Wireless_Relay" target="_blank" rel="noopener" class="pub-repo-link" onclick="event.stopPropagation()">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                Code
+              </a>
+            </div>
+          </div>
+          <div class="pub-figure-wrap">
+            <img src="img/Secure Wireless Relay.svg" alt="Secure Wireless Relay satellite system diagram" class="pub-figure" />
+          </div>
+        </div>
+
+        <div class="pub-item pub-item-featured">
+          <span class="pub-num">6</span>
+          <div class="pub-body">
+            <div class="pub-title">OptiMAC: Adaptive Security Optimization for Message Authentication Code in Adversarial Environment</div>
+            <div class="pub-authors"><strong>S. Kashani</strong>, E. Khademnia, Görkem, Y. Dong, T. Wu, Sang Wu Kim, A. Khokhar, F. Nait-Abdesselam, S. Hussain</div>
+            <div class="pub-footer">
+              <span class="pub-venue">IEEE DSN 2026</span>
+              <a href="https://github.com/mkashani-phd/OptiMAC" target="_blank" rel="noopener" class="pub-repo-link" onclick="event.stopPropagation()">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                Code
+              </a>
+            </div>
+          </div>
+          <div class="pub-figure-wrap">
+            <img src="https://raw.githubusercontent.com/mkashani-phd/OptiMAC/main/UDP%20Demo/img/WiFi/0.1SG.png" alt="OptiMAC results figure" class="pub-figure" />
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-num">5</span>
+          <div class="pub-body">
+            <div class="pub-title">Two-Dimensional Compound Message Authentication Code in Lossy Channels</div>
+            <div class="pub-authors"><strong>SeyedMohammad Kashani</strong>, Sung-Woo Kim, Ashfaq Khokhar</div>
+            <div class="pub-footer">
+              <span class="pub-venue">IEEE ICC 2025</span>
+              <a href="https://youtu.be/a_T46PgNiH8?si=EfaAc24xHNHqclVM" target="_blank" rel="noopener" class="pub-yt-link" onclick="event.stopPropagation()">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Video
+              </a>
+              <a href="https://github.com/mkashani-phd/2D_MAC_SuperPosition" target="_blank" rel="noopener" class="pub-repo-link" onclick="event.stopPropagation()">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-num">4</span>
+          <div class="pub-body">
+            <div class="pub-title">Enhancing NextG Wireless Security: A Lightweight Secret Sharing Scheme with Robust Integrity Check for Military Communications</div>
+            <div class="pub-authors">Abhisek Kumar Jha, <strong>SeyedMohammad Kashani</strong>, Hossein Mohammadi, Andre Kirchner, Minglong Zhang, Remi A. Chou, Sang Wu Kim, Hyuck Kwon, Vuk Marojevic, Taejoon Kim</div>
+            <span class="pub-venue">IEEE MICOM 2024</span>
+          </div>
+        </div>
+
+        <div class="pub-item pub-item-featured">
+          <span class="pub-num">3</span>
+          <div class="pub-body">
+            <div class="pub-title">Radio Frequency Fingerprinting in WBANs Using Complex-Valued CNNs</div>
+            <div class="pub-authors"><strong>SeyedMohammad Kashani</strong>, Syed Sherazi, Ashfaq Khokhar, Sung-Woo Kim, Fethi Nait-Abdesselam</div>
+            <span class="pub-venue">IEEE IWCMC 2024</span>
+          </div>
+          <div class="pub-figure-wrap">
+            <img src="img/CV-CNN.png" alt="Complex-Valued CNN model architecture" class="pub-figure" />
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-num">2</span>
+          <div class="pub-body">
+            <div class="pub-title">Bluetooth Low Energy (BLE) RF Dataset for Machine Learning in WBANs</div>
+            <div class="pub-authors"><strong>SeyedMohammad Kashani</strong>, Syed Sherazi, Ashfaq Khokhar, et al.</div>
+            <div class="pub-footer">
+              <span class="pub-venue">IEEE WCNC 2024</span>
+              <a href="https://www.youtube.com/watch?v=Q2jhC9VyVHY" target="_blank" rel="noopener" class="pub-yt-link" onclick="event.stopPropagation()">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Video
+              </a>
+              <a href="https://github.com/mkashani-phd/BLEWBAN_Dataset" target="_blank" rel="noopener" class="pub-repo-link" onclick="event.stopPropagation()">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                Code
+              </a>
+              <a href="slides/BLE Dataset for WBAN .pdf" target="_blank" rel="noopener" class="pub-pdf-link" onclick="event.stopPropagation()">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Slides
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-num">1</span>
+          <div class="pub-body">
+            <div class="pub-title">A Channel-Based Authentication Using Machine Learning for Body Sensor Networks</div>
+            <div class="pub-authors"><strong>SeyedMohammad Kashani</strong>, Syed Sherazi, Ashfaq Khokhar, et al.</div>
+            <span class="pub-venue">IEEE GlobeCom 2022</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== AWARDS ======== -->
+  <section id="awards" class="section-white">
+    <div class="container">
+      <p class="section-label">Recognition</p>
+      <h2 class="section-title">Honors &amp; Awards</h2>
+      <div class="section-divider"></div>
+      <div class="awards-list">
+
+        <div class="award-item award-item-photo">
+          <div class="award-icon">🏛️</div>
+          <div class="award-body">
+            <div class="award-title">National Science Foundation — NeTS Early Career Investigation Workshop</div>
+            <div class="award-meta">Presented AI-based anomaly detection for secure wireless communication &nbsp;·&nbsp; 2024</div>
+          </div>
+          <a href="img/NSF NeTS ECI.jpg" target="_blank" rel="noopener" class="award-thumb-wrap" title="View photo">
+            <img src="img/NSF NeTS ECI.jpg" alt="NSF NeTS Early Career Investigation Workshop" class="award-thumb" />
+            <span class="award-thumb-overlay">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </span>
+          </a>
+        </div>
+
+        <div class="award-item award-item-photo">
+          <div class="award-icon">🏆</div>
+          <div class="award-body">
+            <div class="award-title">Best Graduate Seminar Presentation Award</div>
+            <div class="award-meta">"Radio Frequency Fingerprinting in Wireless Body Area Networks" &nbsp;·&nbsp; Iowa State University &nbsp;·&nbsp; 2024</div>
+          </div>
+          <a href="img/best seminar award.jpeg" target="_blank" rel="noopener" class="award-thumb-wrap" title="View certificate">
+            <img src="img/best seminar award.jpeg" alt="Best Graduate Seminar Presentation Award certificate" class="award-thumb" />
+            <span class="award-thumb-overlay">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </span>
+          </a>
+        </div>
+
+        <div class="award-item">
+          <div class="award-icon">🎓</div>
+          <div>
+            <div class="award-title">Ranked 1st in Class</div>
+            <div class="award-meta">B.S. Electrical Engineering &nbsp;·&nbsp; AmirKabir University of Technology &nbsp;·&nbsp; 2019</div>
+          </div>
+        </div>
+
+        <div class="award-item">
+          <div class="award-icon">🥈</div>
+          <div>
+            <div class="award-title">Second-Best Senior Design Project Award</div>
+            <div class="award-meta">"Multi-Agent Autonomous Vehicle System" &nbsp;·&nbsp; AmirKabir University of Technology &nbsp;·&nbsp; 2019</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ======== TALKS & PRESENTATIONS ======== -->
-  <section id="talks" class="section-white">
+  <section id="talks" class="section-light">
     <div class="container">
       <p class="section-label">Slides &amp; Talks</p>
       <h2 class="section-title">Talks &amp; Presentations</h2>
@@ -679,55 +655,6 @@
             <span class="talk-link">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
               View Slides
-            </span>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ======== NEWS & MEDIA ======== -->
-  <section class="section-light">
-    <div class="container">
-      <p class="section-label">In the News</p>
-      <h2 class="section-title">Media &amp; Open Data</h2>
-      <div class="section-divider"></div>
-      <div class="news-grid">
-
-        <a href="https://news.engineering.iastate.edu/2025/01/14/moh-kashani-working-to-safeguard-medical-devices/" target="_blank" rel="noopener" class="news-item">
-          <div class="news-img-wrap">
-            <img src="https://news.engineering.iastate.edu/files/2025/01/ECE-Kashani-Wearable-Devices.jpeg" alt="Moh Kashani working to safeguard medical devices" class="news-img" />
-          </div>
-          <div class="news-body">
-            <div class="news-tag">Media Coverage &nbsp;·&nbsp; ISU College of Engineering</div>
-            <div class="news-title">Moh Kashani working to safeguard medical devices</div>
-            <div class="news-desc">
-              Featured in Iowa State University's College of Engineering news — highlighting research on securing wearable medical devices against wireless signal attacks using AI-driven detection.
-            </div>
-            <span class="news-link">
-              Read article
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-            </span>
-          </div>
-        </a>
-
-        <a href="https://ieee-dataport.org/documents/ble-wban-rf-real-world-dataset-ble-devices-human-centric-healthcare-environments" target="_blank" rel="noopener" class="news-item">
-          <div class="news-img-wrap news-img-placeholder">
-            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="rgba(99,155,255,0.7)" stroke-width="1.2">
-              <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v4c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 9v4c0 1.66 4.03 3 9 3s9-1.34 9-3V9"/><path d="M3 13v4c0 1.66 4.03 3 9 3s9-1.34 9-3v-4"/>
-            </svg>
-            <span class="placeholder-label">IEEE DataPort</span>
-          </div>
-          <div class="news-body">
-            <div class="news-tag">Open Dataset &nbsp;·&nbsp; IEEE DataPort</div>
-            <div class="news-title">BLE-WBAN RF Real-World Dataset</div>
-            <div class="news-desc">
-              Co-authored and publicly released a dataset capturing real-world RF signals from BLE devices in human-centric healthcare environments — available on IEEE DataPort for the research community.
-            </div>
-            <span class="news-link">
-              Access dataset
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
             </span>
           </div>
         </a>
