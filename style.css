@@ -612,6 +612,52 @@ section {
   font-weight: 600;
 }
 
+.exp-item-with-photo {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.exp-item-with-photo .exp-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.exp-photo-wrap {
+  width: 200px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  align-self: center;
+}
+
+.exp-photo {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.exp-item-with-photo:hover .exp-photo {
+  transform: scale(1.05);
+}
+
+@media (max-width: 640px) {
+  .exp-item-with-photo {
+    flex-direction: column;
+  }
+  .exp-photo-wrap {
+    width: 100%;
+  }
+  .exp-photo {
+    height: 200px;
+  }
+}
+
 /* =============================================
    PUBLICATIONS
    ============================================= */
@@ -721,7 +767,6 @@ section {
   gap: 0.35rem;
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--blue);
   text-decoration: none;
   border: 1px solid var(--blue-muted);
   background: var(--blue-muted);
@@ -733,6 +778,25 @@ section {
 
 .pub-repo-link:hover {
   background: var(--blue);
+  color: #ffffff;
+}
+
+.pub-yt-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 0.2rem 0.6rem;
+  border-radius: 5px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.pub-yt-link:hover {
+  background: #ef4444;
   color: #ffffff;
 }
 
