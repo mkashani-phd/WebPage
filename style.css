@@ -1054,6 +1054,76 @@ section {
 }
 
 /* =============================================
+   TALKS & PRESENTATIONS
+   ============================================= */
+
+.talks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.talk-card {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+  padding: 1.5rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+
+.talk-card:hover {
+  border-color: #bfdbfe;
+  box-shadow: 0 6px 24px rgba(37, 99, 235, 0.09);
+  transform: translateY(-2px);
+}
+
+.talk-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.talk-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+  line-height: 1.4;
+}
+
+.talk-meta {
+  font-size: 0.8rem;
+  color: var(--blue);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.talk-desc {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.talk-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--blue);
+  margin-top: 0.75rem;
+}
+
+.talk-card:hover .talk-link {
+  text-decoration: underline;
+}
+
+/* =============================================
    CONTACT
    ============================================= */
 
