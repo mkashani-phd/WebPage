@@ -612,6 +612,35 @@ section {
   font-weight: 600;
 }
 
+.exp-link {
+  color: var(--blue);
+  text-decoration: none;
+  font-style: normal;
+}
+
+.exp-link:hover {
+  text-decoration: underline;
+}
+
+.exp-lab-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--blue-text);
+  background: var(--blue-muted);
+  padding: 0.25rem 0.7rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.exp-lab-link:hover {
+  background: var(--blue);
+  color: #ffffff;
+}
+
 .exp-item-with-photo {
   display: flex;
   gap: 1.5rem;

@@ -210,40 +210,56 @@
       <!-- Research -->
       <div id="research-exp" class="exp-panel active">
 
-        <div class="exp-item">
-          <div class="exp-header">
-            <div class="exp-meta">
-              <div class="exp-role">Quantum Network Research Assistant</div>
-              <div class="exp-org">University of Wisconsin–Madison, Department of Physics &nbsp;·&nbsp; Madison, WI</div>
-              <div class="exp-advisor">Advisor: Prof. Mark Saffman</div>
+        <div class="exp-item exp-item-with-photo">
+          <div class="exp-main">
+            <div class="exp-header">
+              <div class="exp-meta">
+                <div class="exp-role">Quantum Network Research Assistant</div>
+                <div class="exp-org">University of Wisconsin–Madison, Department of Physics &nbsp;·&nbsp; Madison, WI</div>
+                <div class="exp-advisor">Advisor: <a href="https://qpal.physics.wisc.edu/people.html" target="_blank" rel="noopener" class="exp-link">Prof. Mark Saffman</a> &nbsp;·&nbsp; SNAQ Experiment</div>
+              </div>
+              <span class="exp-date">2025 – Present</span>
             </div>
-            <span class="exp-date">2025 – Present</span>
+            <ul class="exp-bullets">
+              <li>Designing and implementing <strong>real-time control systems</strong> for quantum computer and network experiments.</li>
+              <li>Programming <strong>ARTIQ</strong> (Advanced Real-Time Infrastructure for Quantum Physics) boards for precise timing and deterministic control of qubits and photonic signals.</li>
+              <li>Developing custom <strong>FPGA circuits</strong> and gateway extensions using Migen and MiSoC, tailored for distributed quantum networking applications.</li>
+              <li>Integrating <strong>PostgreSQL databases</strong> and <strong>Grafana dashboards</strong> to visualize and analyze quantum experiment telemetry and IoT sensor data.</li>
+              <li>Collaborating with experimental physicists to design synchronization protocols across quantum nodes; contributing to the lab's <strong>quantum network testbed</strong> focused on timing precision and fault tolerance.</li>
+            </ul>
+            <div style="margin-top: 1rem;">
+              <a href="https://qpal.physics.wisc.edu/people.html" target="_blank" rel="noopener" class="exp-lab-link">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                QPAL Lab — People
+              </a>
+            </div>
           </div>
-          <ul class="exp-bullets">
-            <li>Designing and implementing <strong>real-time control systems</strong> for quantum computer and network experiments.</li>
-            <li>Programming <strong>ARTIQ</strong> (Advanced Real-Time Infrastructure for Quantum Physics) boards for precise timing and deterministic control of qubits and photonic signals.</li>
-            <li>Developing custom <strong>FPGA circuits</strong> and gateway extensions using Migen and MiSoC, tailored for distributed quantum networking applications.</li>
-            <li>Integrating <strong>PostgreSQL databases</strong> and <strong>Grafana dashboards</strong> to visualize and analyze quantum experiment telemetry and IoT sensor data.</li>
-            <li>Collaborating with experimental physicists to design synchronization protocols across quantum nodes; contributing to the lab's <strong>quantum network testbed</strong> focused on timing precision and fault tolerance.</li>
-          </ul>
+          <div class="exp-photo-wrap">
+            <img src="img/saffman_Lab.png" alt="Quantum computing lab at UW-Madison" class="exp-photo" />
+          </div>
         </div>
 
-        <div class="exp-item">
-          <div class="exp-header">
-            <div class="exp-meta">
-              <div class="exp-role">Wireless Security Graduate Research Assistant</div>
-              <div class="exp-org">Iowa State University, Department of ECE &nbsp;·&nbsp; Ames, IA</div>
-              <div class="exp-advisor">Advisor: Prof. Ashfaq Khokhar &nbsp;·&nbsp; Co-Advisor: Prof. Sang Kim</div>
+        <div class="exp-item exp-item-with-photo">
+          <div class="exp-main">
+            <div class="exp-header">
+              <div class="exp-meta">
+                <div class="exp-role">Wireless Security Graduate Research Assistant</div>
+                <div class="exp-org">Iowa State University, Department of ECE &nbsp;·&nbsp; Ames, IA</div>
+                <div class="exp-advisor">Advisor: Prof. Ashfaq Khokhar &nbsp;·&nbsp; Co-Advisor: Prof. Sang Kim</div>
+              </div>
+              <span class="exp-date">2019 – 2025</span>
             </div>
-            <span class="exp-date">2019 – 2025</span>
+            <ul class="exp-bullets">
+              <li>Designed, collected, and analyzed large-scale <strong>RF datasets</strong> in an anechoic chamber using USRP X310 for ML-driven RF fingerprinting.</li>
+              <li>Developed and implemented SuperImposing code on <strong>2-FSK</strong> wireless communication on USRP SDR platforms.</li>
+              <li>Created and trained <strong>complex-valued CNN</strong> and real-valued CNN models for robust RF fingerprinting and anomaly detection.</li>
+              <li>Implemented custom <strong>MAC and IP layers</strong> in embedded systems (ESP32, Raspberry Pi Pico) for secure wireless communication.</li>
+              <li>Developed <strong>integrity check protocols</strong> enhancing security for healthcare sensors using IEEE 802.15.6 and BLE standards.</li>
+            </ul>
           </div>
-          <ul class="exp-bullets">
-            <li>Designed, collected, and analyzed large-scale <strong>RF datasets</strong> in an anechoic chamber using USRP X310 for ML-driven RF fingerprinting.</li>
-            <li>Developed and implemented SuperImposing code on <strong>2-FSK</strong> wireless communication on USRP SDR platforms.</li>
-            <li>Created and trained <strong>complex-valued CNN</strong> and real-valued CNN models for robust RF fingerprinting and anomaly detection.</li>
-            <li>Implemented custom <strong>MAC and IP layers</strong> in embedded systems (ESP32, Raspberry Pi Pico) for secure wireless communication.</li>
-            <li>Developed <strong>integrity check protocols</strong> enhancing security for healthcare sensors using IEEE 802.15.6 and BLE standards.</li>
-          </ul>
+          <div class="exp-photo-wrap">
+            <img src="img/ISU lab.jpg" alt="Wireless security research lab at Iowa State University" class="exp-photo" />
+          </div>
         </div>
 
         <div class="exp-item exp-item-with-photo">
@@ -277,20 +293,25 @@
 
       <!-- Industry -->
       <div id="industry-exp" class="exp-panel">
-        <div class="exp-item">
-          <div class="exp-header">
-            <div class="exp-meta">
-              <div class="exp-role">Software &amp; Automation Engineer Intern</div>
-              <div class="exp-org">Corteva Agriscience &nbsp;·&nbsp; Johnston, IA</div>
-              <div class="exp-advisor">Supervisor: Joe Hynek</div>
+        <div class="exp-item exp-item-with-photo">
+          <div class="exp-main">
+            <div class="exp-header">
+              <div class="exp-meta">
+                <div class="exp-role">Software &amp; Automation Engineer Intern</div>
+                <div class="exp-org">Corteva Agriscience &nbsp;·&nbsp; Johnston, IA</div>
+                <div class="exp-advisor">Supervisor: Joe Hynek</div>
+              </div>
+              <span class="exp-date">Jan – Dec 2023</span>
             </div>
-            <span class="exp-date">Jan – Dec 2023</span>
+            <ul class="exp-bullets">
+              <li>Developed <strong>PCB boards for RFID-based seed tracking</strong>, selected matching antennas, and tested wireless reading range and optimized placement for a $700K+ project.</li>
+              <li>Implemented MicroPython scripts and optimized embedded software for reliable, low-latency data handling across 350+ deployed boards.</li>
+              <li>Worked in an <strong>agile cross-functional team</strong>, iterating rapidly to incorporate feedback from hardware, software, and data science teams.</li>
+            </ul>
           </div>
-          <ul class="exp-bullets">
-            <li>Developed <strong>PCB boards for RFID-based seed tracking</strong>, selected matching antennas, and tested wireless reading range and optimized placement for a $700K+ project.</li>
-            <li>Implemented MicroPython scripts and optimized embedded software for reliable, low-latency data handling across 350+ deployed boards.</li>
-            <li>Worked in an <strong>agile cross-functional team</strong>, iterating rapidly to incorporate feedback from hardware, software, and data science teams.</li>
-          </ul>
+          <div class="exp-photo-wrap">
+            <img src="img/Corteva.JPG" alt="Corteva Agriscience internship" class="exp-photo" />
+          </div>
         </div>
       </div>
 
