@@ -29,7 +29,7 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background: var(--bg);
+  background: url('img/anechoic_chamber.jpg') center/cover fixed #0a0a0a;
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -116,7 +116,9 @@ body {
 
 .hero {
   min-height: 100vh;
-  background: linear-gradient(160deg, #0a0a0a 0%, #141414 50%, #0a0a0a 100%);
+  background:
+    linear-gradient(rgba(8,8,8,0.60), rgba(8,8,8,0.60)),
+    url('img/anechoic_chamber.jpg') center/cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -548,14 +550,25 @@ body {
    SECTIONS — LAYOUT
    ============================================= */
 
-.section-light { background: var(--bg); }
+.section-light { background: rgba(248,250,252,0.88); }
 
 .section-bg-chamber {
   background:
-    linear-gradient(rgba(10,10,10,0.82), rgba(10,10,10,0.82)),
-    url('img/anechoic chamber.jpg') center/cover no-repeat fixed;
+    linear-gradient(rgba(15,15,15,0.72), rgba(15,15,15,0.72)),
+    url('img/anechoic_chamber.jpg') center/cover no-repeat;
+  color: #e2e8f0;
 }
-.section-white { background: var(--white); }
+
+.section-bg-chamber .section-label { color: #94a3b8; }
+.section-bg-chamber .section-title { color: #f8fafc; }
+.section-bg-chamber .section-divider { background: rgba(255,255,255,0.15); }
+.section-bg-chamber .pub-title { color: #f1f5f9; }
+.section-bg-chamber .pub-authors { color: #cbd5e1; }
+.section-bg-chamber .pub-item { border-color: rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); }
+.section-bg-chamber .pub-num { background: rgba(255,255,255,0.1); color: #e2e8f0; }
+.section-bg-chamber .pub-meta-row { color: #94a3b8; }
+.section-bg-chamber .pub-scholar-link { color: #93c5fd; }
+.section-white { background: rgba(255,255,255,0.91); }
 .section-dark  { background: var(--navy); }
 
 section {
