@@ -955,6 +955,17 @@ section {
   transform: scale(1.05);
 }
 
+/* Projects: wide plot figures shown whole rather than cropped */
+.project-figure-wrap {
+  width: 300px;
+  background: #ffffff;
+}
+
+.project-figure {
+  height: 140px;
+  object-fit: contain;
+}
+
 @media (max-width: 640px) {
   .exp-item-with-photo {
     flex-direction: column;
@@ -964,6 +975,9 @@ section {
   }
   .exp-photo {
     height: 200px;
+  }
+  .exp-photo.project-figure {
+    height: auto;
   }
 }
 
