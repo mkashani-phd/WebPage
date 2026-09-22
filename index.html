@@ -653,6 +653,34 @@
         </a>
       </div>
 
+      <div class="exp-item exp-item-with-photo">
+        <div class="exp-main">
+          <div class="exp-header">
+            <div class="exp-meta">
+              <div class="exp-role">Detuned-DRAG Leakage Suppression on a Transmon Qubit</div>
+              <div class="exp-org">QPAL Lab, UW–Madison &nbsp;·&nbsp; Quantum Machines OPX / QUA</div>
+            </div>
+            <span class="exp-date">2026</span>
+          </div>
+          <ul class="exp-bullets">
+            <li>Built a <strong>three-state matched-filter discriminator</strong> to classify single-shot readout into <code>|0⟩</code>, <code>|1⟩</code>, and the non-computational leakage state <code>|2⟩</code>, going beyond the usual binary qubit-state threshold.</li>
+            <li>Calibrated the <strong>DRAG coefficient</strong> (&alpha; = &minus;0.34) on the computational transition using a pseudo-identity (180&ndash;(&minus;180)) sequence with a fixed compensating detuning (&minus;110 kHz) already folded into the pulse.</li>
+            <li>Directly measured, rather than inferred, the leakage the gate leaves behind: preparing <code>|1⟩</code> with the calibrated pulse leaks <strong>&sim;1%</strong> of the population into <code>|2⟩</code>, against a &sim;0.5&ndash;0.6% floor from state-prep/readout error alone.</li>
+            <li>Confirmed with randomized benchmarking that this low leakage isn't costing gate fidelity: <strong>error per Clifford &sim;0.1%</strong> (&gt;99.9% fidelity) with the same pulse, across 6 repeated runs.</li>
+            <li>Reproduces, at a single operating point, the simultaneous suppression of phase error and leakage described by Chen <em>et al.</em>, in place of the usual DRAG fidelity&ndash;leakage trade-off.</li>
+          </ul>
+          <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="papers/drag_leakage_suppression.pdf" target="_blank" rel="noopener" class="pub-pdf-link">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Write-up (PDF)
+            </a>
+          </div>
+        </div>
+        <a href="img/drag-leakage-suppression.png" target="_blank" rel="noopener" class="exp-photo-wrap project-figure-wrap" title="View full figure">
+          <img src="img/drag-leakage-suppression.png" alt="DRAG coefficient calibration chevron pattern next to an IQ scatter plot showing leakage into the |2> state" class="exp-photo project-figure" />
+        </a>
+      </div>
+
     </div>
   </section>
 
