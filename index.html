@@ -7,7 +7,7 @@
   <title>Moh Kashani</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script>
     // Set the track before first paint so the accent colour doesn't flash
@@ -44,64 +44,31 @@
   <!-- ======== TRACK SWITCHER (floating) ======== -->
   <nav class="track-dock" id="track-dock" aria-label="Choose a field">
     <span class="dock-indicator" id="dock-indicator"></span>
-    <span class="dock-label">Viewing</span>
+    <span class="dock-label">Path</span>
     <button data-choose="all">All</button>
     <button data-choose="quantum"><span aria-hidden="true">⚛️</span> Quantum</button>
     <button data-choose="rf"><span aria-hidden="true">📡</span> <span class="dock-long">RF &amp; Security</span><span class="dock-short">RF</span></button>
     <button data-choose="embedded"><span aria-hidden="true">🔧</span> Embedded</button>
   </nav>
-  <!-- ======== HERO ======== -->
-  <section class="hero hero-minimal" id="home">
-    <canvas id="hero-canvas" aria-hidden="true"></canvas>
-    <div class="hero-minimal-content">
-      <div class="hero-split">
-        <div class="hero-split-text">
-          <h1>Moh Kashani</h1>
-          <p class="hero-tagline" id="hero-tagline">Quantum · RF &amp; Security · Embedded — I do all three</p>
-          <p class="track-prompt">Pick a focus — the site rearranges around it</p>
-          <div class="track-chooser" role="group" aria-label="Choose a field">
-            <button class="track-card" data-choose="quantum" style="--c:#a78bfa" aria-pressed="false">
-              <svg class="track-anim" viewBox="0 0 64 64" aria-hidden="true">
-                <g><ellipse cx="32" cy="32" rx="26" ry="9"/><circle r="2.6" class="fill"><animateMotion dur="3s" repeatCount="indefinite" path="M6,32 a26,9 0 1,0 52,0 a26,9 0 1,0 -52,0"/></circle></g>
-                <g transform="rotate(60 32 32)"><ellipse cx="32" cy="32" rx="26" ry="9"/><circle r="2.6" class="fill"><animateMotion dur="4s" repeatCount="indefinite" path="M58,32 a26,9 0 1,0 -52,0 a26,9 0 1,0 52,0"/></circle></g>
-                <g transform="rotate(120 32 32)"><ellipse cx="32" cy="32" rx="26" ry="9"/><circle r="2.6" class="fill"><animateMotion dur="5s" repeatCount="indefinite" path="M6,32 a26,9 0 1,0 52,0 a26,9 0 1,0 -52,0"/></circle></g>
-                <circle cx="32" cy="32" r="4" class="fill"/>
-              </svg>
-              <span class="track-card-text">
-                <span class="track-card-title">Quantum</span>
-                <span class="track-card-sub">Qubit control · ARTIQ · FPGA</span>
-              </span>
-            </button>
-            <button class="track-card" data-choose="rf" style="--c:#22d3ee" aria-pressed="false">
-              <svg class="track-anim" viewBox="0 0 64 64" aria-hidden="true">
-                <circle class="anim-ring" cx="32" cy="30" r="6" vector-effect="non-scaling-stroke"/>
-                <circle class="anim-ring" cx="32" cy="30" r="6" vector-effect="non-scaling-stroke"/>
-                <circle class="anim-ring" cx="32" cy="30" r="6" vector-effect="non-scaling-stroke"/>
-                <path d="M32 30 V58 M23 58 H41 M26 44 L32 30 L38 44"/>
-                <circle cx="32" cy="30" r="3" class="fill"/>
-              </svg>
-              <span class="track-card-text">
-                <span class="track-card-title">RF &amp; Security</span>
-                <span class="track-card-sub">RF fingerprinting · Secure protocols</span>
-              </span>
-            </button>
-            <button class="track-card" data-choose="embedded" style="--c:#34d399" aria-pressed="false">
-              <svg class="track-anim" viewBox="0 0 64 64" aria-hidden="true">
-                <path class="anim-trace" d="M22 27 H10 V10"/><path class="anim-trace" d="M42 37 H54 V54"/><path class="anim-trace" d="M37 22 V8 H54"/><path class="anim-trace" d="M27 42 V56 H10"/>
-                <path class="anim-pulse" pathLength="100" d="M22 27 H10 V10"/><path class="anim-pulse" pathLength="100" d="M42 37 H54 V54"/><path class="anim-pulse" pathLength="100" d="M37 22 V8 H54"/><path class="anim-pulse" pathLength="100" d="M27 42 V56 H10"/>
-                <rect x="22" y="22" width="20" height="20" rx="2.5"/>
-                <rect x="28" y="28" width="8" height="8" rx="1" class="fill"/>
-              </svg>
-              <span class="track-card-text">
-                <span class="track-card-title">Embedded</span>
-                <span class="track-card-sub">Firmware · PCB · Edge AI</span>
-              </span>
-            </button>
-          </div>
-          <button class="track-all" data-choose="all">or see everything →</button>
-          <div class="hero-buttons">
-            <a href="Moh_CV (1).pdf" download class="btn-doc" id="cv-link">CV</a>
-            <a href="Resume.docx.pdf" download class="btn-doc" id="resume-link">Résumé</a>
+  <!-- ======== TRAVEL OVERLAY (path transition) ======== -->
+  <div class="travel" id="travel" aria-hidden="true"></div>
+
+  <!-- ======== INTRO ======== -->
+  <section class="intro" id="home">
+    <canvas id="intro-canvas" aria-hidden="true"></canvas>
+    <div class="intro-inner" id="intro-inner">
+      <div class="intro-text">
+        <p class="intro-kicker">Ph.D. Computer Engineering &nbsp;·&nbsp; M.S. Physics (Quantum)</p>
+        <h1 class="intro-name">Moh Kashani</h1>
+        <p class="intro-lead">I work where three fields meet — and I do all three.</p>
+        <ul class="intro-fields">
+          <li style="--c:var(--q)"><span class="field-dot"></span>Quantum computing &amp; networks</li>
+          <li style="--c:var(--r)"><span class="field-dot"></span>RF, wireless &amp; security</li>
+          <li style="--c:var(--e)"><span class="field-dot"></span>Embedded systems &amp; FPGA</li>
+        </ul>
+        <div class="intro-actions">
+          <a href="Moh_CV (1).pdf" download class="btn-doc" data-cv>CV</a>
+          <a href="Resume.docx.pdf" download class="btn-doc" data-resume>Résumé</a>
             <a href="mailto:mkashani.phd@gmail.com" class="btn-primary btn-icon-only" aria-label="Contact Me">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
             </a>
@@ -114,17 +81,148 @@
             <a href="https://www.linkedin.com/in/mkashani-phd/" target="_blank" rel="noopener" class="btn-brand btn-linkedin btn-icon-only" aria-label="LinkedIn">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             </a>
-          </div>
-        </div>
-        <div class="hero-split-photo">
-          <img src="img/personal_image.jpg" alt="Moh Kashani" class="hero-photo-min" />
         </div>
       </div>
+      <div class="intro-photo">
+        <span class="orbit" style="--c:var(--q); --tilt:-25deg; --dur:9s"></span>
+        <span class="orbit" style="--c:var(--r); --tilt:35deg; --dur:12s"></span>
+        <span class="orbit" style="--c:var(--e); --tilt:95deg; --dur:15s"></span>
+        <img src="img/personal_image.jpg" alt="Moh Kashani" />
+      </div>
     </div>
-    <div class="hero-scroll-hint">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    <div class="intro-cue" id="intro-cue">
+      <span>Scroll to find your path</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
   </section>
+
+  <!-- ======== THE FORK — road splits into three paths as you scroll ======== -->
+  <section class="fork" id="fork" aria-label="Choose a path">
+    <div class="fork-stage" id="fork-stage">
+      <div class="fork-head">
+        <p class="fork-line" id="fork-line-1">The road splits three ways.</p>
+        <p class="fork-line fork-line-2" id="fork-line-2">Pick a path — <span>or keep scrolling to see everything.</span></p>
+      </div>
+      <div class="road-cam" id="road-cam">
+        <svg class="road" id="road" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMax meet" aria-hidden="false">
+          <defs>
+            <linearGradient id="g-trunk" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0" stop-color="#1c2638"/>
+              <stop offset="1" stop-color="#101827"/>
+            </linearGradient>
+            <radialGradient id="g-horizon" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0" stop-color="#93c5fd" stop-opacity="0.22"/>
+              <stop offset="1" stop-color="#93c5fd" stop-opacity="0"/>
+            </radialGradient>
+            <clipPath id="trunk-clip">
+              <rect id="trunk-clip-rect" x="0" y="800" width="1000" height="0"/>
+            </clipPath>
+            <mask id="m-quantum" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="800">
+              <path class="branch-reveal" d="M500,440 Q470,290 160,210" pathLength="1" stroke="#fff" stroke-width="140" fill="none" stroke-dasharray="1 1" stroke-dashoffset="1"/>
+            </mask>
+            <mask id="m-rf" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="800">
+              <path class="branch-reveal" d="M500,440 Q500,300 500,170" pathLength="1" stroke="#fff" stroke-width="140" fill="none" stroke-dasharray="1 1" stroke-dashoffset="1"/>
+            </mask>
+            <mask id="m-embedded" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="800">
+              <path class="branch-reveal" d="M500,440 Q530,290 840,210" pathLength="1" stroke="#fff" stroke-width="140" fill="none" stroke-dasharray="1 1" stroke-dashoffset="1"/>
+            </mask>
+          </defs>
+          <g id="stars"></g>
+          <ellipse class="horizon" cx="500" cy="215" rx="560" ry="110" fill="url(#g-horizon)"/>
+          <g clip-path="url(#trunk-clip)">
+            <path class="trunk" d="M290,800 L710,800 L548,430 L452,430 Z"/>
+            <path class="trunk-edge" d="M290,800 L452,430 M710,800 L548,430"/>
+            <path class="road-dash trunk-dash" d="M500,800 L500,430"/>
+          </g>
+          <g class="branch" data-choose="quantum" data-b="quantum" style="--bc:var(--q)" mask="url(#m-quantum)">
+            <path class="branch-road" d="M452,430 Q425,285 163,199 L157,221 Q480,300 510,430 Z"/>
+            <path class="road-dash branch-dash" d="M500,430 Q470,290 160,210"/>
+          </g>
+          <g class="branch" data-choose="rf" data-b="rf" style="--bc:var(--r)" mask="url(#m-rf)">
+            <path class="branch-road" d="M470,430 Q480,300 491,170 L509,170 Q520,300 530,430 Z"/>
+            <path class="road-dash branch-dash" d="M500,430 Q500,300 500,170"/>
+          </g>
+          <g class="branch" data-choose="embedded" data-b="embedded" style="--bc:var(--e)" mask="url(#m-embedded)">
+            <path class="branch-road" d="M548,430 Q575,285 837,199 L843,221 Q520,300 490,430 Z"/>
+            <path class="road-dash branch-dash" d="M500,430 Q530,290 840,210"/>
+          </g>
+          <g class="dests" id="dests">
+            <g class="dest" data-choose="quantum" data-b="quantum" style="--bc:var(--q)" tabindex="0" role="button" aria-label="Quantum path">
+              <circle class="dest-halo" cx="160" cy="210" r="44"/>
+              <circle class="dest-core" cx="160" cy="210" r="30"/>
+              <svg class="track-anim" x="136" y="186" width="48" height="48" viewBox="0 0 64 64">
+                <g><ellipse cx="32" cy="32" rx="26" ry="9"/><circle r="2.6" class="fill"><animateMotion dur="3s" repeatCount="indefinite" path="M6,32 a26,9 0 1,0 52,0 a26,9 0 1,0 -52,0"/></circle></g>
+                <g transform="rotate(60 32 32)"><ellipse cx="32" cy="32" rx="26" ry="9"/><circle r="2.6" class="fill"><animateMotion dur="4s" repeatCount="indefinite" path="M58,32 a26,9 0 1,0 -52,0 a26,9 0 1,0 52,0"/></circle></g>
+                <g transform="rotate(120 32 32)"><ellipse cx="32" cy="32" rx="26" ry="9"/><circle r="2.6" class="fill"><animateMotion dur="5s" repeatCount="indefinite" path="M6,32 a26,9 0 1,0 52,0 a26,9 0 1,0 -52,0"/></circle></g>
+                <circle cx="32" cy="32" r="4" class="fill"/>
+              </svg>
+              <text class="dest-title" x="160" y="124" text-anchor="middle">Quantum</text>
+              <text class="dest-sub" x="160" y="150" text-anchor="middle">Qubit control · ARTIQ · FPGA</text>
+            </g>
+            <g class="dest" data-choose="rf" data-b="rf" style="--bc:var(--r)" tabindex="0" role="button" aria-label="RF &amp; Security path">
+              <circle class="dest-halo" cx="500" cy="170" r="44"/>
+              <circle class="dest-core" cx="500" cy="170" r="30"/>
+              <svg class="track-anim" x="476" y="146" width="48" height="48" viewBox="0 0 64 64">
+                <circle class="anim-ring" cx="32" cy="30" r="6" vector-effect="non-scaling-stroke"/>
+                <circle class="anim-ring" cx="32" cy="30" r="6" vector-effect="non-scaling-stroke"/>
+                <circle class="anim-ring" cx="32" cy="30" r="6" vector-effect="non-scaling-stroke"/>
+                <path d="M32 30 V58 M23 58 H41 M26 44 L32 30 L38 44"/>
+                <circle cx="32" cy="30" r="3" class="fill"/>
+              </svg>
+              <text class="dest-title" x="500" y="84" text-anchor="middle">RF &amp; Security</text>
+              <text class="dest-sub" x="500" y="110" text-anchor="middle">RF fingerprinting · Secure protocols</text>
+            </g>
+            <g class="dest" data-choose="embedded" data-b="embedded" style="--bc:var(--e)" tabindex="0" role="button" aria-label="Embedded path">
+              <circle class="dest-halo" cx="840" cy="210" r="44"/>
+              <circle class="dest-core" cx="840" cy="210" r="30"/>
+              <svg class="track-anim" x="816" y="186" width="48" height="48" viewBox="0 0 64 64">
+                <path class="anim-trace" d="M22 27 H10 V10"/><path class="anim-trace" d="M42 37 H54 V54"/><path class="anim-trace" d="M37 22 V8 H54"/><path class="anim-trace" d="M27 42 V56 H10"/>
+                <path class="anim-pulse" pathLength="100" d="M22 27 H10 V10"/><path class="anim-pulse" pathLength="100" d="M42 37 H54 V54"/><path class="anim-pulse" pathLength="100" d="M37 22 V8 H54"/><path class="anim-pulse" pathLength="100" d="M27 42 V56 H10"/>
+                <rect x="22" y="22" width="20" height="20" rx="2.5"/>
+                <rect x="28" y="28" width="8" height="8" rx="1" class="fill"/>
+              </svg>
+              <text class="dest-title" x="840" y="124" text-anchor="middle">Embedded</text>
+              <text class="dest-sub" x="840" y="150" text-anchor="middle">Firmware · PCB · Edge AI</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="fork-foot" id="fork-foot">
+        <div class="fork-pills">
+          <button data-choose="quantum" style="--bc:var(--q)">Quantum</button>
+          <button data-choose="rf" style="--bc:var(--r)">RF &amp; Security</button>
+          <button data-choose="embedded" style="--bc:var(--e)">Embedded</button>
+        </div>
+        <button class="fork-all" data-choose="all">See everything</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CONTENT ======== -->
+  <div class="content" id="content">
+    <div class="content-road" aria-hidden="true">
+      <div class="content-road-fill" id="content-road-fill">
+        <span class="lane lane-quantum"></span><span class="lane lane-rf"></span><span class="lane lane-embedded"></span>
+      </div>
+    </div>
+
+    <header class="path-head">
+      <div class="container">
+        <p class="path-kicker" id="path-kicker"></p>
+        <h2 class="path-title" id="path-title"></h2>
+        <p class="path-desc" id="path-desc"></p>
+        <div class="path-legend">
+          <span class="field-chip" data-f="quantum">Quantum</span>
+          <span class="field-chip" data-f="rf">RF &amp; Security</span>
+          <span class="field-chip" data-f="embedded">Embedded</span>
+        </div>
+        <div class="path-actions">
+          <a href="Moh_CV (1).pdf" download class="btn-doc" data-cv>CV</a>
+          <a href="Resume.docx.pdf" download class="btn-doc" data-resume>Résumé</a>
+          <button class="path-switch" id="path-switch">↑ Choose a different path</button>
+        </div>
+      </div>
+    </header>
 
   <main id="main">
 
@@ -548,7 +646,7 @@
   </section>
 
   <!-- ======== PUBLICATIONS ======== -->
-  <section id="publications" class="section-light" data-keep>
+  <section id="publications" class="section-light">
     <div class="container">
       <p class="section-label">Academic Work</p>
       <h2 class="section-title">Publications</h2>
@@ -898,6 +996,7 @@
   </section>
 
   </main>
+  </div>
 
   <!-- ======== CONTACT ======== -->
   <section id="contact" class="section-dark">
