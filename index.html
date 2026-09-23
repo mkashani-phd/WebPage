@@ -9,6 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script>
+    // Set the track before first paint so the accent colour doesn't flash
+    (function () {
+      var d = document.documentElement, q = new URLSearchParams(location.search).get('track') || location.hash.slice(1);
+      d.classList.add('js');
+      if (['quantum', 'rf', 'embedded'].indexOf(q) !== -1) d.dataset.track = q;
+    })();
+  </script>
 </head>
 <body>
 
@@ -30,21 +38,70 @@
       <li><a href="#hobbies" onclick="closeMenu()">Hobbies</a></li>
       <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
     </ul>
+    <div class="scroll-progress" id="scroll-progress"></div>
+  </nav>
+
+  <!-- ======== TRACK SWITCHER (floating) ======== -->
+  <nav class="track-dock" id="track-dock" aria-label="Choose a field">
+    <span class="dock-indicator" id="dock-indicator"></span>
+    <span class="dock-label">Viewing</span>
+    <button data-choose="all">All</button>
+    <button data-choose="quantum"><span aria-hidden="true">⚛️</span> Quantum</button>
+    <button data-choose="rf"><span aria-hidden="true">📡</span> <span class="dock-long">RF &amp; Security</span><span class="dock-short">RF</span></button>
+    <button data-choose="embedded"><span aria-hidden="true">🔧</span> Embedded</button>
   </nav>
   <!-- ======== HERO ======== -->
   <section class="hero hero-minimal" id="home">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
     <div class="hero-minimal-content">
       <div class="hero-split">
         <div class="hero-split-text">
           <h1>Moh Kashani</h1>
-          <div class="hero-fields">
-            <a class="hero-field-link" href="#experience" onclick="goToExp(0,'exp-quantum')">Quantum Networks</a>
-            <a class="hero-field-link" href="#experience" onclick="goToExp(0,'exp-wireless')">Wireless Security</a>
-            <a class="hero-field-link" href="#experience" onclick="goToExp(1,'exp-corteva')">Embedded Systems</a>
+          <p class="hero-tagline" id="hero-tagline">Quantum · RF &amp; Security · Embedded — I do all three</p>
+          <p class="track-prompt">Pick a focus — the site rearranges around it</p>
+          <div class="track-chooser" role="group" aria-label="Choose a field">
+            <button class="track-card" data-choose="quantum" style="--c:#a78bfa" aria-pressed="false">
+              <svg class="track-anim" viewBox="0 0 64 64" aria-hidden="true">
+                <g><ellipse cx="32" cy="32" rx="26" ry="9"/><circle r="2.6" class="fill"><animateMotion dur="3s" repeatCount="indefinite" path="M6,32 a26,9 0 1,0 52,0 a26,9 0 1,0 -52,0"/></circle></g>
+                <g transform="rotate(60 32 32)"><ellipse cx="32" cy="32" rx="26" ry="9"/><circle r="2.6" class="fill"><animateMotion dur="4s" repeatCount="indefinite" path="M58,32 a26,9 0 1,0 -52,0 a26,9 0 1,0 52,0"/></circle></g>
+                <g transform="rotate(120 32 32)"><ellipse cx="32" cy="32" rx="26" ry="9"/><circle r="2.6" class="fill"><animateMotion dur="5s" repeatCount="indefinite" path="M6,32 a26,9 0 1,0 52,0 a26,9 0 1,0 -52,0"/></circle></g>
+                <circle cx="32" cy="32" r="4" class="fill"/>
+              </svg>
+              <span class="track-card-text">
+                <span class="track-card-title">Quantum</span>
+                <span class="track-card-sub">Qubit control · ARTIQ · FPGA</span>
+              </span>
+            </button>
+            <button class="track-card" data-choose="rf" style="--c:#22d3ee" aria-pressed="false">
+              <svg class="track-anim" viewBox="0 0 64 64" aria-hidden="true">
+                <circle class="anim-ring" cx="32" cy="30" r="6" vector-effect="non-scaling-stroke"/>
+                <circle class="anim-ring" cx="32" cy="30" r="6" vector-effect="non-scaling-stroke"/>
+                <circle class="anim-ring" cx="32" cy="30" r="6" vector-effect="non-scaling-stroke"/>
+                <path d="M32 30 V58 M23 58 H41 M26 44 L32 30 L38 44"/>
+                <circle cx="32" cy="30" r="3" class="fill"/>
+              </svg>
+              <span class="track-card-text">
+                <span class="track-card-title">RF &amp; Security</span>
+                <span class="track-card-sub">RF fingerprinting · Secure protocols</span>
+              </span>
+            </button>
+            <button class="track-card" data-choose="embedded" style="--c:#34d399" aria-pressed="false">
+              <svg class="track-anim" viewBox="0 0 64 64" aria-hidden="true">
+                <path class="anim-trace" d="M22 27 H10 V10"/><path class="anim-trace" d="M42 37 H54 V54"/><path class="anim-trace" d="M37 22 V8 H54"/><path class="anim-trace" d="M27 42 V56 H10"/>
+                <path class="anim-pulse" pathLength="100" d="M22 27 H10 V10"/><path class="anim-pulse" pathLength="100" d="M42 37 H54 V54"/><path class="anim-pulse" pathLength="100" d="M37 22 V8 H54"/><path class="anim-pulse" pathLength="100" d="M27 42 V56 H10"/>
+                <rect x="22" y="22" width="20" height="20" rx="2.5"/>
+                <rect x="28" y="28" width="8" height="8" rx="1" class="fill"/>
+              </svg>
+              <span class="track-card-text">
+                <span class="track-card-title">Embedded</span>
+                <span class="track-card-sub">Firmware · PCB · Edge AI</span>
+              </span>
+            </button>
           </div>
+          <button class="track-all" data-choose="all">or see everything →</button>
           <div class="hero-buttons">
-            <a href="Moh_CV (1).pdf" download class="btn-doc">CV</a>
-            <a href="Resume.docx.pdf" download class="btn-doc">Résumé</a>
+            <a href="Moh_CV (1).pdf" download class="btn-doc" id="cv-link">CV</a>
+            <a href="Resume.docx.pdf" download class="btn-doc" id="resume-link">Résumé</a>
             <a href="mailto:mkashani.phd@gmail.com" class="btn-primary btn-icon-only" aria-label="Contact Me">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
             </a>
@@ -68,6 +125,8 @@
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
   </section>
+
+  <main id="main">
 
   <!-- ======== EDUCATION ======== -->
   <section id="education" class="section-white">
@@ -154,15 +213,15 @@
       <div class="section-divider"></div>
 
       <div class="exp-tabs">
-        <button class="exp-tab active" onclick="showTab('research-exp', this)">Research</button>
-        <button class="exp-tab" onclick="showTab('industry-exp', this)">Industry</button>
-        <button class="exp-tab" onclick="showTab('teaching-exp', this)">Teaching</button>
+        <button class="exp-tab active" data-panel="research-exp" onclick="showTab('research-exp', this)">Research</button>
+        <button class="exp-tab" data-panel="industry-exp" onclick="showTab('industry-exp', this)">Industry</button>
+        <button class="exp-tab" data-panel="teaching-exp" onclick="showTab('teaching-exp', this)">Teaching</button>
       </div>
 
       <!-- Research -->
       <div id="research-exp" class="exp-panel active">
 
-        <div id="exp-quantum" class="exp-item exp-item-with-photo">
+        <div id="exp-quantum" data-track="quantum embedded" class="exp-item exp-item-with-photo">
           <div class="exp-main">
             <div class="exp-header">
               <div class="exp-meta">
@@ -191,7 +250,7 @@
           </div>
         </div>
 
-        <div id="exp-wireless" class="exp-item exp-item-with-photo">
+        <div id="exp-wireless" data-track="rf embedded" class="exp-item exp-item-with-photo">
           <div class="exp-main">
             <div class="exp-header">
               <div class="exp-meta">
@@ -214,7 +273,7 @@
           </div>
         </div>
 
-        <div class="exp-item exp-item-with-photo">
+        <div data-track="embedded" class="exp-item exp-item-with-photo">
           <div class="exp-main">
             <div class="exp-header">
               <div class="exp-meta">
@@ -245,7 +304,7 @@
 
       <!-- Industry -->
       <div id="industry-exp" class="exp-panel">
-        <div id="exp-corteva" class="exp-item exp-item-with-photo">
+        <div id="exp-corteva" data-track="embedded rf" class="exp-item exp-item-with-photo">
           <div class="exp-main">
             <div class="exp-header">
               <div class="exp-meta">
@@ -269,7 +328,7 @@
 
       <!-- Teaching -->
       <div id="teaching-exp" class="exp-panel">
-        <div class="exp-item">
+        <div data-track="all" class="exp-item">
           <div class="exp-header">
             <div class="exp-meta">
               <div class="exp-role">Teaching Assistant — Logic Circuits &amp; Introduction to C</div>
@@ -285,7 +344,7 @@
             </a>
           </div>
         </div>
-        <div class="exp-item">
+        <div data-track="all" class="exp-item">
           <div class="exp-header">
             <div class="exp-meta">
               <div class="exp-role">Teaching Assistant — Computer Architecture &amp; Digital Control</div>
@@ -308,7 +367,7 @@
       <div class="section-divider"></div>
       <div class="news-grid">
 
-        <a href="https://news.engineering.iastate.edu/2025/01/14/moh-kashani-working-to-safeguard-medical-devices/" target="_blank" rel="noopener" class="news-item">
+        <a href="https://news.engineering.iastate.edu/2025/01/14/moh-kashani-working-to-safeguard-medical-devices/" target="_blank" rel="noopener" data-track="rf" class="news-item">
           <div class="news-img-wrap">
             <img src="https://news.engineering.iastate.edu/files/2025/01/ECE-Kashani-Wearable-Devices.jpeg" alt="Moh Kashani working to safeguard medical devices" class="news-img" />
           </div>
@@ -325,7 +384,7 @@
           </div>
         </a>
 
-        <a href="https://ieee-dataport.org/documents/ble-wban-rf-real-world-dataset-ble-devices-human-centric-healthcare-environments" target="_blank" rel="noopener" class="news-item">
+        <a href="https://ieee-dataport.org/documents/ble-wban-rf-real-world-dataset-ble-devices-human-centric-healthcare-environments" target="_blank" rel="noopener" data-track="rf" class="news-item">
           <div class="news-img-wrap">
             <img src="img/BLE-WBAN.png" alt="BLE-WBAN RF Dataset" class="news-img" />
           </div>
@@ -342,7 +401,7 @@
           </div>
         </a>
 
-        <a href="https://github.com/mkashani-phd/superposition-phy-security-dataset" target="_blank" rel="noopener" class="news-item">
+        <a href="https://github.com/mkashani-phd/superposition-phy-security-dataset" target="_blank" rel="noopener" data-track="rf" class="news-item">
           <div class="news-img-wrap">
             <img src="img/SPADE-dataset.png" alt="SPADE superposition physical-layer AI demodulation dataset — tag BER vs SNR across superposition coefficients" class="news-img" />
           </div>
@@ -370,32 +429,32 @@
       <h2 class="section-title">Research Interests</h2>
       <div class="section-divider"></div>
       <div class="interests-grid">
-        <div class="interest-card">
+        <div data-track="quantum" class="interest-card">
           <div class="interest-icon">⚛️</div>
           <h3>Quantum Networks</h3>
           <p>Real-time control systems for quantum computers, FPGA-based qubit and photonic signal control using ARTIQ and Migen, distributed quantum network testbeds, and timing synchronization across quantum nodes.</p>
         </div>
-        <div class="interest-card">
+        <div data-track="rf" class="interest-card">
           <div class="interest-icon">📡</div>
           <h3>RF Fingerprinting & Wireless Security</h3>
           <p>AI-driven RF fingerprinting using complex-valued CNNs, large-scale RF dataset collection on SDR platforms (USRP B210/X310), waveform classification, and anomaly detection for 5G and WBAN security.</p>
         </div>
-        <div class="interest-card">
+        <div data-track="rf" class="interest-card">
           <div class="interest-icon">🔐</div>
           <h3>Secure Communication Protocols</h3>
           <p>Channel-based authentication for body sensor networks, message authentication codes in lossy channels, integrity checks for healthcare devices (IEEE 802.15.6, BLE), and custom MAC/IP layer design.</p>
         </div>
-        <div class="interest-card">
+        <div data-track="rf embedded" class="interest-card">
           <div class="interest-icon">🧠</div>
           <h3>Deep Learning for Signal Processing</h3>
           <p>Complex-valued CNN architectures, adversarial signal defense, real-time anomaly detection, superposition coding on 2-FSK, and large-scale RF dataset design, collection, and validation.</p>
         </div>
-        <div class="interest-card">
+        <div data-track="embedded" class="interest-card">
           <div class="interest-icon">🔧</div>
           <h3>Embedded Systems & IoT</h3>
           <p>Bare-metal firmware on ESP32 and Raspberry Pi Pico, PCB design, low-latency real-time data processing, and custom communication stacks for industrial and medical IoT deployments.</p>
         </div>
-        <div class="interest-card">
+        <div data-track="quantum" class="interest-card">
           <div class="interest-icon">🔭</div>
           <h3>Quantum-Classical Integration</h3>
           <p>Bridging classical networking with quantum architectures for scalable, fault-tolerant communication layers; telemetry monitoring with PostgreSQL and Grafana for quantum experiment infrastructure.</p>
@@ -405,14 +464,14 @@
   </section>
 
   <!-- ======== SKILLS ======== -->
-  <section class="section-white">
+  <section id="skills" class="section-white">
     <div class="container">
       <p class="section-label">Technical Expertise</p>
       <h2 class="section-title">Skills</h2>
       <div class="section-divider"></div>
       <div class="skills-grid">
 
-        <div class="skill-group">
+        <div data-track="all" class="skill-group">
           <h3>Programming</h3>
           <div class="skill-tags">
             <span class="skill-tag">C / C++</span>
@@ -424,7 +483,7 @@
           </div>
         </div>
 
-        <div class="skill-group">
+        <div data-track="rf embedded" class="skill-group">
           <h3>Machine Learning</h3>
           <div class="skill-tags">
             <span class="skill-tag">TensorFlow</span>
@@ -436,7 +495,7 @@
           </div>
         </div>
 
-        <div class="skill-group">
+        <div data-track="rf" class="skill-group">
           <h3>Wireless &amp; SDR</h3>
           <div class="skill-tags">
             <span class="skill-tag">USRP B210/X310</span>
@@ -448,7 +507,7 @@
           </div>
         </div>
 
-        <div class="skill-group">
+        <div data-track="quantum embedded" class="skill-group">
           <h3>Quantum &amp; FPGA</h3>
           <div class="skill-tags">
             <span class="skill-tag">ARTIQ</span>
@@ -460,7 +519,7 @@
           </div>
         </div>
 
-        <div class="skill-group">
+        <div data-track="embedded" class="skill-group">
           <h3>Embedded &amp; Hardware</h3>
           <div class="skill-tags">
             <span class="skill-tag">ESP32</span>
@@ -472,7 +531,7 @@
           </div>
         </div>
 
-        <div class="skill-group">
+        <div data-track="all" class="skill-group">
           <h3>Tools &amp; Infrastructure</h3>
           <div class="skill-tags">
             <span class="skill-tag">PostgreSQL</span>
@@ -489,7 +548,7 @@
   </section>
 
   <!-- ======== PUBLICATIONS ======== -->
-  <section id="publications" class="section-light">
+  <section id="publications" class="section-light" data-keep>
     <div class="container">
       <p class="section-label">Academic Work</p>
       <h2 class="section-title">Publications</h2>
@@ -503,7 +562,7 @@
       </div>
       <div class="pub-list">
 
-        <div class="pub-item pub-item-featured">
+        <div data-track="rf" class="pub-item pub-item-featured">
           <span class="pub-num">7</span>
           <div class="pub-body">
             <div class="pub-title">Securing Relay Satellite System: Direct MAC Transmission by Superposition Coding</div>
@@ -529,7 +588,7 @@
           </div>
         </div>
 
-        <div class="pub-item pub-item-featured">
+        <div data-track="rf" class="pub-item pub-item-featured">
           <span class="pub-num">6</span>
           <div class="pub-body">
             <div class="pub-title">OptiMAC: Adaptive Security Optimization for Message Authentication Code in Adversarial Environment</div>
@@ -547,7 +606,7 @@
           </div>
         </div>
 
-        <div class="pub-item">
+        <div data-track="rf" class="pub-item">
           <span class="pub-num">5</span>
           <div class="pub-body">
             <div class="pub-title">Two-Dimensional Compound Message Authentication Code in Lossy Channels</div>
@@ -566,7 +625,7 @@
           </div>
         </div>
 
-        <div class="pub-item">
+        <div data-track="rf" class="pub-item">
           <span class="pub-num">4</span>
           <div class="pub-body">
             <div class="pub-title">Enhancing NextG Wireless Security: A Lightweight Secret Sharing Scheme with Robust Integrity Check for Military Communications</div>
@@ -575,7 +634,7 @@
           </div>
         </div>
 
-        <div class="pub-item pub-item-featured">
+        <div data-track="rf" class="pub-item pub-item-featured">
           <span class="pub-num">3</span>
           <div class="pub-body">
             <div class="pub-title">Radio Frequency Fingerprinting in WBANs Using Complex-Valued CNNs</div>
@@ -587,7 +646,7 @@
           </div>
         </div>
 
-        <div class="pub-item pub-item-featured">
+        <div data-track="rf" class="pub-item pub-item-featured">
           <span class="pub-num">2</span>
           <div class="pub-body">
             <div class="pub-title">Bluetooth Low Energy (BLE) RF Dataset for Machine Learning in WBANs</div>
@@ -613,7 +672,7 @@
           </div>
         </div>
 
-        <div class="pub-item">
+        <div data-track="rf" class="pub-item">
           <span class="pub-num">1</span>
           <div class="pub-body">
             <div class="pub-title">A Channel-Based Authentication Using Machine Learning for Body Sensor Networks</div>
@@ -633,7 +692,7 @@
       <h2 class="section-title">Projects</h2>
       <div class="section-divider"></div>
 
-      <div class="exp-item exp-item-with-photo">
+      <div data-track="embedded" class="exp-item exp-item-with-photo">
         <div class="exp-main">
           <div class="exp-header">
             <div class="exp-meta">
@@ -665,7 +724,7 @@
         </a>
       </div>
 
-      <div class="exp-item exp-item-with-photo">
+      <div data-track="quantum" class="exp-item exp-item-with-photo">
         <div class="exp-main">
           <div class="exp-header">
             <div class="exp-meta">
@@ -704,7 +763,7 @@
       <div class="section-divider"></div>
       <div class="awards-list">
 
-        <div class="award-item award-item-photo">
+        <div data-track="rf" class="award-item award-item-photo">
           <div class="award-icon">🏛️</div>
           <div class="award-body">
             <div class="award-title">National Science Foundation — NeTS Early Career Investigation Workshop</div>
@@ -718,7 +777,7 @@
           </a>
         </div>
 
-        <div class="award-item award-item-photo">
+        <div data-track="rf" class="award-item award-item-photo">
           <div class="award-icon">🏆</div>
           <div class="award-body">
             <div class="award-title">Best Graduate Seminar Presentation Award</div>
@@ -732,7 +791,7 @@
           </a>
         </div>
 
-        <div class="award-item">
+        <div data-track="all" class="award-item">
           <div class="award-icon">🎓</div>
           <div>
             <div class="award-title">Ranked 1st in Class</div>
@@ -740,7 +799,7 @@
           </div>
         </div>
 
-        <div class="award-item">
+        <div data-track="embedded" class="award-item">
           <div class="award-icon">🥈</div>
           <div>
             <div class="award-title">Second-Best Senior Design Project Award</div>
@@ -760,7 +819,7 @@
       <div class="section-divider"></div>
       <div class="talks-grid">
 
-        <a href="slides/Final Oral.pdf" target="_blank" rel="noopener" class="talk-card">
+        <a href="slides/Final Oral.pdf" target="_blank" rel="noopener" data-track="rf" class="talk-card">
           <div class="talk-icon">🎓</div>
           <div class="talk-body">
             <div class="talk-title">Ph.D. Final Oral Defense</div>
@@ -773,7 +832,7 @@
           </div>
         </a>
 
-        <a href="slides/IEEE MILCOM 2025 - PQ SIM-Less Auth (1).pdf" target="_blank" rel="noopener" class="talk-card">
+        <a href="slides/IEEE MILCOM 2025 - PQ SIM-Less Auth (1).pdf" target="_blank" rel="noopener" data-track="rf quantum" class="talk-card">
           <div class="talk-icon">📡</div>
           <div class="talk-body">
             <div class="talk-title">Post-Quantum SIM-Less Authentication</div>
@@ -786,7 +845,7 @@
           </div>
         </a>
 
-        <a href="slides/BLE Dataset for WBAN .pdf" target="_blank" rel="noopener" class="talk-card">
+        <a href="slides/BLE Dataset for WBAN .pdf" target="_blank" rel="noopener" data-track="rf" class="talk-card">
           <div class="talk-icon">📶</div>
           <div class="talk-body">
             <div class="talk-title">BLE-WBAN RF Dataset for Machine Learning</div>
@@ -799,7 +858,7 @@
           </div>
         </a>
 
-        <a href="slides/BB84 (1).pdf" target="_blank" rel="noopener" class="talk-card">
+        <a href="slides/BB84 (1).pdf" target="_blank" rel="noopener" data-track="quantum rf" class="talk-card">
           <div class="talk-icon">⚛️</div>
           <div class="talk-body">
             <div class="talk-title">BB84 Quantum Key Distribution Protocol</div>
@@ -837,6 +896,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- ======== CONTACT ======== -->
   <section id="contact" class="section-dark">
@@ -887,91 +948,7 @@
     <p>&copy; 2026 Moh Kashani &nbsp;·&nbsp; Madison, WI</p>
   </footer>
 
-  <script>
-    // Navigate to a specific experience item and activate its tab
-    function goToExp(tabIndex, itemId) {
-      const tabIds = ['research-exp', 'industry-exp', 'teaching-exp'];
-      const tabs = document.querySelectorAll('.exp-tab');
-      showTab(tabIds[tabIndex], tabs[tabIndex]);
-      setTimeout(() => {
-        const el = document.getElementById(itemId);
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 120);
-    }
-
-    // Sticky navbar style on scroll
-    window.addEventListener('scroll', () => {
-      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
-    });
-
-    // Experience tabs
-    function showTab(id, btn) {
-      document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.exp-tab').forEach(b => b.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      btn.classList.add('active');
-    }
-
-    // Mobile menu
-    function toggleMenu() {
-      document.getElementById('nav-links').classList.toggle('open');
-    }
-    function closeMenu() {
-      document.getElementById('nav-links').classList.remove('open');
-    }
-
-    // Collapsible sections
-    function addToggleBtn(wrapper) {
-      const btn = document.createElement('button');
-      btn.className = 'read-more-btn';
-      btn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg> Read more`;
-      btn.addEventListener('click', () => {
-        const open = wrapper.classList.toggle('open');
-        btn.classList.toggle('open', open);
-        btn.innerHTML = open
-          ? `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg> Show less`
-          : `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg> Read more`;
-      });
-      wrapper.insertAdjacentElement('afterend', btn);
-    }
-
-    function setupCollapsibles() {
-      // Experience: collapse bullet lists + any following lab/link div
-      document.querySelectorAll('.exp-bullets').forEach(ul => {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'collapsible-body';
-        ul.replaceWith(wrapper);
-        wrapper.appendChild(ul);
-        const next = wrapper.nextElementSibling;
-        if (next && next.tagName === 'DIV' && next.hasAttribute('style')) {
-          wrapper.appendChild(next);
-        }
-        addToggleBtn(wrapper);
-      });
-
-      // Research interest card descriptions
-      document.querySelectorAll('.interest-card p').forEach(p => {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'collapsible-body';
-        p.replaceWith(wrapper);
-        wrapper.appendChild(p);
-        addToggleBtn(wrapper);
-      });
-
-    }
-
-    setupCollapsibles();
-
-    // Intersection observer for fade-in animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.interest-card, .edu-item, .exp-item, .pub-item, .award-item, .skill-group, .news-item').forEach(el => {
-      el.classList.add('fade-in');
-      observer.observe(el);
-    });
-  </script>
+  <script src="site.js"></script>
 
 </body>
 </html>
