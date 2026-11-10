@@ -116,7 +116,8 @@ function wrapCollapsible(el) {
 document.querySelectorAll('.exp-bullets').forEach(ul => {
   const wrapper = wrapCollapsible(ul);
   const next = wrapper.nextElementSibling;
-  if (next && next.tagName === 'DIV' && next.hasAttribute('style')) wrapper.appendChild(next);
+  // Link rows marked .project-links (PDF/Code buttons) stay visible while collapsed
+  if (next && next.tagName === 'DIV' && next.hasAttribute('style') && !next.classList.contains('project-links')) wrapper.appendChild(next);
   addToggleBtn(wrapper);
 });
 // Research interest card descriptions
