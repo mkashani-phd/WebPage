@@ -332,6 +332,78 @@ body.in-content #navbar { transform: none; }
   gap: 0.6rem;
 }
 
+/* Live Google Scholar stats strip */
+.scholar-stats {
+  display: inline-grid;
+  grid-template-columns: repeat(3, auto) auto;
+  grid-template-rows: auto auto;
+  align-items: end;
+  column-gap: 1.6rem;
+  row-gap: 0.55rem;
+  margin-top: 1.4rem;
+  padding: 0.9rem 1.2rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.scholar-stats:hover { border-color: var(--line-2); background: var(--surface-2); }
+
+.ss-stat { display: flex; flex-direction: column; line-height: 1.1; }
+.ss-num {
+  font-family: var(--font-head);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+.ss-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+.ss-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 40px;
+  padding-left: 1.2rem;
+  border-left: 1px solid var(--line);
+}
+.ss-chart:empty { display: none; }
+.ss-bar {
+  position: relative;
+  width: 14px;
+  min-height: 2px;
+  border-radius: 3px 3px 0 0;
+  background: color-mix(in srgb, var(--accent) 70%, transparent);
+}
+.ss-bar:last-child { background: var(--accent); }
+
+.ss-foot {
+  grid-column: 1 / -1;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--dim);
+  text-align: left;
+}
+.ss-updated:not(:empty)::before { content: ' · '; }
+
+@media (max-width: 900px) {
+  .ss-foot { text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .scholar-stats { column-gap: 1rem; padding: 0.8rem 0.9rem 0.7rem; }
+  .ss-num { font-size: 1.3rem; }
+  .ss-chart { padding-left: 0.8rem; }
+  .ss-bar { width: 10px; }
+}
+
 /* Photo with three orbits, one per field */
 .intro-photo {
   position: relative;

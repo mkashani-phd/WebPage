@@ -539,6 +539,42 @@ window.addEventListener('resize', onScroll);
 
 if (reduceMotion) document.querySelectorAll('.track-anim').forEach(svg => svg.pauseAnimations());
 
+/* ---------- Google Scholar stats ----------
+   Scholar can't be queried from the browser (no API, no CORS), so a daily
+   GitHub Action writes scholar.json. Fetch it fresh on every load; the
+   numbers already in the HTML stay as the fallback if this fails. */
+(function scholarStats() {
+  const box = document.getElementById('scholar-stats');
+  if (!box) return;
+  fetch('scholar.json?t=' + Date.now(), { cache: 'no-store' })
+    .then(r => (r.ok ? r.json() : Promise.reject(r.status)))
+    .then(d => {
+      box.querySelectorAll('[data-ss]').forEach(el => {
+        const v = d[el.dataset.ss];
+        if (Number.isFinite(v)) el.textContent = v.toLocaleString();
+      });
+      if (d.profile) box.href = d.profile;
+
+      const years = (d.per_year || []).slice(-6);
+      const max = Math.max(1, ...years.map(y => y.citations));
+      const chart = document.getElementById('ss-chart');
+      chart.replaceChildren(...years.map(y => {
+        const bar = document.createElement('span');
+        bar.className = 'ss-bar';
+        bar.style.height = (y.citations / max) * 100 + '%';
+        bar.title = `${y.year}: ${y.citations} citations`;
+        return bar;
+      }));
+
+      if (d.updated) {
+        const t = new Date(d.updated);
+        if (!isNaN(t)) document.getElementById('ss-updated').textContent =
+          'updated ' + t.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
+      }
+    })
+    .catch(() => {});
+})();
+
 /* ---------- Init ---------- */
 const initial = new URLSearchParams(location.search).get('track') || location.hash.slice(1);
 applyTrack(TRACKS[initial] ? initial : 'all', true);
