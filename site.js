@@ -123,6 +123,21 @@ document.querySelectorAll('.exp-bullets').forEach(ul => {
 // Research interest card descriptions
 document.querySelectorAll('.interest-card p').forEach(p => addToggleBtn(wrapCollapsible(p)));
 
+/* ---------- Clickable cards ----------
+   Clicking a paper opens its publisher page (IEEE Xplore, else the PDF);
+   clicking a project downloads its write-up. Clicks on the card's own
+   links/buttons, or while selecting text, behave normally. */
+document.querySelectorAll('#publications .pub-item, #projects .exp-item').forEach(card => {
+  const target = card.querySelector('.pub-paper-link') || card.querySelector('.pub-pdf-link');
+  if (!target) return;
+  card.classList.add('card-link');
+  card.title = target.textContent.trim();
+  card.addEventListener('click', e => {
+    if (e.target.closest('a, button') || String(window.getSelection())) return;
+    target.click();
+  });
+});
+
 /* ---------- Field chips (visible only in the "everything" view) ---------- */
 document.querySelectorAll('#main [data-track]').forEach((el, i) => {
   el.dataset.idx = i;

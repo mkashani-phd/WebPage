@@ -1260,6 +1260,9 @@ section { padding: 5rem 2.5rem; }
 
 /* Small link pills (lab, PDF, video, code) */
 .exp-lab-link,
+.card-link { cursor: pointer; }
+
+.pub-paper-link,
 .pub-repo-link,
 .pub-pdf-link,
 .pub-yt-link {
@@ -1287,6 +1290,13 @@ section { padding: 5rem 2.5rem; }
   color: #fff;
   background: var(--surface-2);
 }
+
+.pub-paper-link {
+  color: #93c5fd;
+  border-color: rgba(147, 197, 253, 0.3);
+  background: rgba(147, 197, 253, 0.06);
+}
+.pub-paper-link:hover { background: rgba(147, 197, 253, 0.16); }
 
 .pub-pdf-link {
   color: #86efac;
